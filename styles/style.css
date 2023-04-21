@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+/* volcanic ash - rgb(72, 72, 73) */
+/* very peri -  var(--veryperi) -or- #6667AB */
+/* anthracite - var(--anthracite) */
+/* cloud dancer - rgb(240, 238, 233) */
+/* white sand - var(--sand) */
+
+:root {
+  --anthracite: rgb(40, 40, 45);
+  --veryperi: rgb(102, 103, 171);
+  --volcanic: rgb(72, 72, 73);
+  --cloud: rgb(240, 238, 233);
+  --sand: rgb(219, 213, 209);
+}
+
+html {
+  font-size: 24px; /* px means "pixels": the base font size is now 10 pixels high */
+  font-family: 'Varela Round', sans-serif; /* this should be the rest of the output you got from Google Fonts */
+  background-color: var(--sand);
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.red-text {
+  color: red;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 60px;
+/*  text-align: center;*/
+  color: var(--veryperi);
+  margin: 0;
+  padding-top: 1rem;
+/*  padding: 25px 10px;*/
+}
+
+p,
+li {
+  font-size: 26px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+
+
+
+body {
+  width: 1000px;
+  height: 100%;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  /* margin: provides space AROUND an element*/
+  /* with one value: [all sides]
+  /* with two values: [top/bottom, left/right] */
+  /* with three values: [top, left/right, bottom] */
+  /* with four values: [top, right, bottom, left (clockwise)] */
+  /* valid values: <length> (can be negative); <percentange%> (of the containing block); or 'auto' */
+  margin: auto;
+  background-color: var(--cloud)
+  /* padding: provides spaces WITHIN an element */
+  padding: 2rem; 
+  border: .1em solid var(--anthracite);
+  color: var(--anthracite);
+}
+
+
+
+/* header/navbar below */
+/* volcanic ash - rgb(72, 72, 73) */
+/* very peri -  var(--veryperi) -or- #6667AB */
+/* anthracite - var(--anthracite) */
+/* cloud dancer - rgb(240, 238, 233) */
+/* white sand - var(--sand) */
+
+.header { 
+/*  width: calc(100% + 4rem);*/
+  width: 100%;
+/*  margin: -2rem -2rem 0 -2rem;*/
+ }
+.topbar {
+  text-align: center;
+  height: 6em;
+  border-bottom: .1em solid var(--sand);
+  background-color: var(--anthracite);;
+  display: flex;
+  overflow: hidden;
+  margin: auto;  
+  width: 100%;
+}
+
+.logo  {
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+
+}
+
+.logo img {
+  display: inline-block;
+  height: 3em;
+  width: auto; 
+  vertical-align: middle;
+  margin: auto;
+}
+
+/* for centering group of items (usually buttons) */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 100%;
+}
+
+
+.topnav {
+  margin: inherit;
+  width: 100%;
+}
+
+ul.topnav {
+  list-style-type: none;
+  font-size: 12px;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--anthracite);
+  margin: 0;
+}
+
+ul.topnav li {
+  float: left;
+  border-right-color: var(--sand);
+  border-right-style: solid;
+  border-right-width: .1em;
+}
+
+ul.topnav li a {
+  display: block;
+  color: var(--cloud)
+  text-align: center;
+  font-size: 16px;
+  padding: 1em 1.2em;
+  text-decoration: none;
+  transition: all .7s;
+}
+
+ul.topnav li:nth-child(2), li:last-child {
+  border-left-color: var(--sand);
+  border-left-style: solid;
+  border-left-width: .1em;
+}
+
+ul.topnav li:first-child {
+    border-right: none;
+}
+ul.topnav li:last-child {
+    border-right: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: var(--volcanic)
+}
+
+ul.topnav li a:hover.active {
+  transition: all .2s;
+  background-color: rgb(93, 94, 164);
+}
+
+ul.topnav li a.active {
+  background-color: var(--veryperi);
+  color: rgb(6, 6, 48);
+  font-weight: 600;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+li::marker {
+    color: #65DDB2;
+    font-size: 1.2em;
+}
+
+
+.instructions {
+  padding: 40px 10%;
+}
+
+
+

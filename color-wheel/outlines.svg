@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.49 705.33">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="outlines">
+      <path id="surprise-outline" d="m657.31,528.39l-304.52-175.65,304.58-175.78c15.71,27.19,46.98,89.72,47.11,175.12.13,86.1-31.46,149.12-47.18,176.31Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <path id="sad-outline" d="m48.14,176.99l304.56,175.58L48.15,528.42C32.43,501.23,1.15,438.71,1,353.31c-.15-86.1,31.42-149.13,47.14-176.32Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <path id="angry-outline" d="m657.19,176.77l-304.37,175.89.06-351.66c31.4-.01,101.19,4.17,175.21,46.76,74.63,42.93,113.42,101.8,129.1,129.01Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <path id="disgust-outline" d="m48.29,528.63l304.33-175.96.02,351.66c-31.4.02-101.19-4.15-175.22-46.72-74.64-42.92-113.44-101.78-129.13-128.98Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <path id="fear-outline" d="m352.64,1.05l.14,351.54L48.26,176.71c15.69-27.2,54.21-85.55,128.1-128.36C250.85,5.19,321.23,1.03,352.64,1.05Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <path id="happy-outline" d="m352.9,704.31l-.22-351.54,304.56,175.81c-15.69,27.21-54.19,85.56-128.07,128.39-74.49,43.18-144.86,47.35-176.27,47.34Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+    </g>
+  </g>
+</svg>

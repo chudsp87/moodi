@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306.89 354.27">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="outlines">
+      <path id="fear-outline" d="m305.74,1l.14,351.54L1.37,176.66c15.69-27.2,54.21-85.55,128.1-128.36C203.96,5.13,274.34.98,305.74,1Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+    </g>
+  </g>
+</svg>
+
+
+
+<svg id="fear" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306.89 354.27">
+            <path d="m305.74,1l.14,351.54L1.37,176.66c15.69-27.2,54.21-85.55,128.1-128.36C203.96,5.13,274.34.98,305.74,1Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+        </svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306.72 354.4">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="outlines">
+      <path id="disgust-outline" d="m1.37,177.7L305.7,1.73l.02,351.66c-31.4.02-101.19-4.15-175.22-46.72C55.86,263.76,17.05,204.9,1.37,177.7Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+    </g>
+  </g>
+</svg>
+
+<svg id="disgust" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306.72 354.4">
+            <path d="m1.37,177.7L305.7,1.73l.02,351.66c-31.4.02-101.19-4.15-175.22-46.72C55.86,263.76,17.05,204.9,1.37,177.7Z" style="fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 2px;"/>
+        </svg>

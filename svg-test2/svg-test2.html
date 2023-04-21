@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Overlay Example</title>
+<style>
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .base-image, .overlay {
+    max-width: 100%;
+    height: auto;
+  } 
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+
+  button {
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+<div class="image-container">
+  <img src="images/color-glow-base.png" alt="Base Image" class="base-image">
+  <img src="images/red-glow.png" alt="Overlay 1" class="overlay" id="red-overlay">
+  <img src="images/orange-glow.png" alt="Overlay 2" class="overlay" id="orange-overlay">
+  <img src="images/yellow-glow.png" alt="Overlay 3" class="overlay" id="yellow-overlay">
+  <img src="images/green-glow.png" alt="Overlay 1" class="overlay" id="green-overlay">
+  <img src="images/cyan-glow.png" alt="Overlay 2" class="overlay" id="cyan-overlay">
+  <img src="images/blue-glow.png" alt="Overlay 3" class="overlay" id="blue-overlay">
+  <img src="images/purple-glow.png" alt="Overlay 1" class="overlay" id="purple-overlay">
+  <img src="images/pink-glow.png" alt="Overlay 2" class="overlay" id="pink-overlay">
+</div>
+
+<div class="button-container">
+  <button onclick="toggleOverlay('red-overlay')">Red</button>
+  <button onclick="toggleOverlay('orange-overlay')">Orange</button>
+  <button onclick="toggleOverlay('yellow-overlay')">Yellow</button>
+  <button onclick="toggleOverlay('green-overlay')">Green</button>
+  <button onclick="toggleOverlay('cyan-overlay')">Cyan</button>
+  <button onclick="toggleOverlay('blue-overlay')">Blue</button>
+  <button onclick="toggleOverlay('purple-overlay')">Purple</button>
+  <button onclick="toggleOverlay('pink-overlay')">Pink</button>
+</div>
+<script>
+  function toggleOverlay(overlayId) {
+    const overlays = document.getElementsByClassName('overlay');
+    for (let i = 0; i < overlays.length; i++) {
+      overlays[i].classList.remove('visible');
+    }
+
+    const overlay = document.getElementById(overlayId);
+    overlay.classList.add('visible');
+  }
+</script>
+<!-- <script>
+  function toggleOverlay(overlayId) {
+    const overlay = document.getElementById(overlayId);
+    overlay.classList.toggle('visible');
+  }
+</script> -->
+</body>
+</html>

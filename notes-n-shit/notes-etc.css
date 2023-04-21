@@ -1,0 +1,24 @@
+/* element selector */
+p {
+  color: red;
+}
+/* multiple element style */
+h1,
+li,
+h3,
+h5 {
+  color: blue;
+}
+/* ID selector */
+#my-id {
+  color: green;
+}
+/* class selector */
+.my-class {
+  color:coral;
+}
+/* HOVER STYLE */
+a:hover {
+  color: #a58fb5;
+  font-style: normal;
+}

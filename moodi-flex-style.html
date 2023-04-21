@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/moodi-flex-style.css" rel="stylesheet" />
+    <!-- Header -->
+    <div class="header">
+        <!-- <h1>My Website</h1> -->
+        <img src="images/logo/moodi-logo-final.svg" />
+        <p style="margin-bottom: 0">Moodi tagline</p>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a class="active" href="moodi-flex-style.html">Home</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+    <!-- The flexible grid (content) -->
+    <div class="row">
+        <div class="side">
+            <h2>#TODO Sidebar Menu</h2>
+            <h5>Current Menu Item</h5>
+            <div class="fakeimg" style="height:200px;">Exanded Menu View</div>
+            <p>Add'l text</p>
+            <h3>More Menu</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="fakeimg" style="height:60px;">Menu stuff</div><br>
+            <div class="fakeimg" style="height:60px;">Menu stuff</div><br>
+            <div class="fakeimg" style="height:60px;">Menu stuff</div>
+        </div>
+        <div class="main">
+            <div class="flex-1">
+                <h1>Emotion/Glow Settings - [Current Emotion (#TODO =, update based on current emotion with JS (or create tons of sheets)]</h1>
+                <h3>Experiment with what different color <em>'glows'</em> look like</h3>
+            </div>
+            <div class="flex-2">
+                <div class="wrapper">
+                <!-- <img src="images/glow-preview/color-glow-base.png" alt="Base Image" class="base-image"> -->
+                <img src="images/glow-preview/color-glow-base.png" alt="Base Image" class="base-image">
+                <img src="images/glow-preview/red-glow.png" alt="Overlay 1" class="overlay" id="red-overlay">
+                <img src="images/glow-preview/orange-glow.png" alt="Overlay 2" class="overlay" id="orange-overlay">
+                <img src="images/glow-preview/yellow-glow.png" alt="Overlay 3" class="overlay" id="yellow-overlay">
+                <img src="images/glow-preview/lime-green-glow.png" alt="Overlay 1" class="overlay" id="lime-green-overlay">
+                <img src="images/glow-preview/green-glow.png" alt="Overlay 1" class="overlay" id="green-overlay">
+                <img src="images/glow-preview/cyan-glow.png" alt="Overlay 2" class="overlay" id="cyan-overlay">
+                <img src="images/glow-preview/blue-glow.png" alt="Overlay 3" class="overlay" id="blue-overlay">
+                <img src="images/glow-preview/purple-glow.png" alt="Overlay 1" class="overlay" id="purple-overlay">
+                <img src="images/glow-preview/pink-glow.png" alt="Overlay 2" class="overlay" id="pink-overlay">
+              </div>
+            </div>
+            <div class="flex-3">
+                <button id="red-button" onclick="toggleOverlay('red-overlay')">Red</button>
+                <button id="orange-button" onclick="toggleOverlay('orange-overlay')">Orange</button>
+                <button id="yellow-button" onclick="toggleOverlay('yellow-overlay')">Yellow</button>
+                <button id="lime-green-button" onclick="toggleOverlay('lime-green-overlay')">Lime<br>Green</button>
+                <button id="green-button" onclick="toggleOverlay('green-overlay')">Green</button>
+                <button id="cyan-button" onclick="toggleOverlay('cyan-overlay')">Cyan</button>
+                <button id="blue-button" onclick="toggleOverlay('blue-overlay')">Blue</button>
+                <button id="purple-button" onclick="toggleOverlay('purple-overlay')">Purple</button>
+                <button id="pink-button" onclick="toggleOverlay('pink-overlay')">Pink</button>
+            </div>
+            <!-- <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <br>
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Sep 2, 2017</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+    <script>
+    function toggleOverlay(overlayId) {
+        const overlays = document.getElementsByClassName('overlay');
+        for (let i = 0; i < overlays.length; i++) {
+            overlays[i].classList.remove('visible');
+        }
+
+        const overlay = document.getElementById(overlayId);
+        overlay.classList.add('visible');
+    }
+    </script>
+    </body>
+
+</html>

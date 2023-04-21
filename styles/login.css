@@ -1,0 +1,234 @@
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 300;
+}
+
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  margin-bottom: 180px;
+  width: 550px;
+  height: 290px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+#login-sso {
+  position: relative;
+  margin: 5% auto;
+  margin-top: -140px;
+  margin-bottom: 20px;
+  width: 550px;
+  height: 120px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-left:25px;
+  width: 300px;
+  height: 400px;
+}
+
+h1 {
+  margin: 0 0 10px 0;
+  padding-left: 0px;
+  font-weight: 300;
+  font-size: 34px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 220px;
+  height: 36px;
+  background: darkcyan;
+  border: none;
+  border-radius: 3px;
+  color: #FFF;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+.row-bottom {
+  position: relative;
+  /*margin-bottom: 100px;
+  */padding-bottom: 80px;
+  display: flex;
+    padding: 30px;
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+.center {
+  margin-top: 0px;
+  margin-left: 250px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.or {
+  position: absolute;
+  top: 220px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+  color: #555;
+  font-size: 15px;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+/*  background: url('https://goo.gl/YbktSj');*/
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+
+
+button.social-signin {
+  margin: 1.5em 0 ;
+  width: 25vw;
+  height: 3em;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 3px;
+  color: white;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 500;
+  
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+  background: #1877F2;
+  border-color: #1877F2;
+}
+button.social-signin.facebook:hover {
+  background: #FFF;
+  color: #1877F2;
+  }
+
+button.social-signin.twitter {
+  background: #1d9bf0;
+  border-color: #1d9bf0;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+button.social-signin.twitter:hover {
+  background: #FFF;
+  color: #1d9bf0;
+  }
+
+button.social-signin.google {
+  background: #df4a32;
+  border-color: #df4a32;
+}
+button.social-signin.google:hover {
+  background: #FFF;
+  color: #df4a32;
+  }
+
+.loginwith {
+  font-size: 16px;
+  color: #555;
+  padding: 2em;
+}
+
+
+.bottom-center {
+  padding-top: 1em;
+}

@@ -1,0 +1,90 @@
+/* volcanic ash - rgb(72, 72, 73) */
+/* very peri -  rgb(102, 103, 171) -or- #6667AB */
+/* anthracite - rgb(40, 40, 45) */
+/* cloud dancer - rgb(240, 238, 233) */
+/* white sand - rgb(219, 213, 209) */
+
+.header {
+  /*margin: -2rem -2rem 0 -2rem;*/
+  width: 100%;
+  background-color: rgb(40, 40, 45);
+}
+
+.topbar {
+  text-align: center;
+  height: 4em;
+  border-bottom: .1em solid rgb(219, 213, 209);
+  background-color: inherit;
+  
+}
+.logo  {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+
+  vertical-align: middle;
+}
+
+ul.topnav {
+  list-style-type: none;
+  font-size: 12px;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(40, 40, 45);
+
+}
+
+ul.topnav li {
+  float: left;
+  border-right-color: rgb(219, 213, 209);
+  border-right-style: solid;
+  border-right-width: .1em;
+}
+
+ul.topnav li a {
+  display: block;
+  color: rgb(240, 238, 233);
+  text-align: center;
+  font-size: 16px;
+  padding: 1em 1.2em;
+  text-decoration: none;
+  transition: all .7s;
+}
+
+ul.topnav li:nth-child(2), li:last-child {
+  border-left-color: rgb(219, 213, 209);
+  border-left-style: solid;
+  border-left-width: .1em;
+}
+
+ul.topnav li:first-child {
+    border-right: none;
+}
+ul.topnav li:last-child {
+    border-right: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: rgb(72, 72, 73);
+}
+
+ul.topnav li a:hover.active {
+  transition: all .2s;
+  background-color: rgb(93, 94, 164);
+}
+
+ul.topnav li a.active {
+  background-color: rgb(102, 103, 171);
+  color: rgb(6, 6, 48);
+  font-weight: 600;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}

@@ -1,0 +1,112 @@
+.container {
+  position:relative;
+  margin-left: auto;
+  margin-right: auto;
+  height:800px;
+  width:800px;
+}
+
+.emotion:hover {
+  transform: scale(1.5);
+  transition: background 0.5s, transform 0.5s ease-out, fill 0.5s;
+}
+
+.happy {
+  position: absolute;
+  top: 400px; left: 400px;
+  height:300px;  
+}
+
+.surprise {
+  position: absolute;
+  top: 250px; left: 400px;
+  width:300px;  
+}
+
+.anger {
+  position: absolute;
+  top: 100px; left: 400px;
+  height:300px;
+}
+
+.fear {
+  position: absolute;
+  top: 100px; left: 140px;
+  height:300px;
+}
+
+.sad {
+  position: absolute;
+  top: 250px; left: 100px;
+  width:300px;
+}
+
+.disgust {
+  position: absolute;
+  top: 400px; left: 140px;
+  height:300px;
+}
+
+
+
+
+.fear:hover {
+  transform: scale(1.3);
+  transform-origin: bottom right;
+  /* clip-path: path("m397.06,1l.18,457L1.37,229.35c20.4-35.36,70.47-111.21,166.53-166.87C264.74,6.37,356.23.97,397.06,1Z"); */
+}
+
+
+.sad:hover {
+  transform: scale(1.3);
+  transform-origin: center right;
+  /* clip-path: path("m62.28,1.37l395.92,228.25L62.3,458.22C41.87,422.88,1.2,341.6,1,230.58.8,118.66,41.85,36.71,62.28,1.37Z"); */
+}
+
+
+.disgust:hover {
+  transform: scale(1.3);
+  transform-origin: top right;
+  /* clip-path: path("m1.37,230.49L397,1.73l.03,457.16c-40.83.02-131.55-5.39-227.79-60.73C72.2,342.37,21.76,265.85,1.37,230.49Z"); */
+}
+
+
+.anger:hover {
+  transform: scale(1.3);
+  transform-origin: bottom left;
+  /* clip-path: path('m396.69,229.5L1,458.16,1.08,1c40.83-.02,131.55,5.42,227.78,60.79,97.02,55.81,147.44,132.34,167.83,167.72Z'); */
+}
+
+
+.surprise:hover {
+  transform: scale(1.3);
+  transform-origin: left;
+  /* clip-path: path("m397.87,458.22L2,229.88,397.96,1.37c20.43,35.35,61.08,116.63,61.25,227.65.17,111.93-40.89,193.86-61.33,229.2Z"); */
+}
+
+.happy:hover {
+  transform: scale(1.3);
+  transform-origin: top left;
+  /*clip-path: path("m1.29,458.74L1,1.73l395.93,228.56c-20.39,35.37-70.44,111.23-166.49,166.91-96.83,56.13-188.32,61.56-229.15,61.54Z"); */
+}
+
+/*  Rollover image styles  */
+  .figure {
+    position: relative;
+    width: 360px; /* can be omitted for a regular non-lazy image */
+    max-width: 100%;
+  }
+  .figure img.image-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  .figure:hover img.image-hover {
+    opacity: 1;
+  }
+

@@ -1,0 +1,6 @@
+div.logo {
+  width: 50px;
+  height: 50px;
+  mask: logo;
+  -webkit-mask-box-image: url(images/logo/logo-final/green.png);
+}
