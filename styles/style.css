@@ -391,15 +391,15 @@ body {
     /* margin: provides space AROUND an element*/
     /* with one value: [all sides]
   /* with two values: [top/bottom, left/right] */
-  /* with three values: [top, left/right, bottom] */
-  /* with four values: [top, right, bottom, left (clockwise)] */
-  /* valid values: <length> (can be negative); <percentange%> (of the containing block); or 'auto' */
-  margin: auto;
-  background-color: var(--cloud);
-  /* padding: provides spaces WITHIN an element */
-  padding: 2rem; 
-  border: .1em solid var(--anthracite);
-  color: var(--anthracite);
+    /* with three values: [top, left/right, bottom] */
+    /* with four values: [top, right, bottom, left (clockwise)] */
+    /* valid values: <length> (can be negative); <percentange%> (of the containing block); or 'auto' */
+    margin: auto;
+    background-color: var(--cloud)
+        /* padding: provides spaces WITHIN an element */
+        padding: 2rem;
+    border: .1em solid var(--anthracite);
+    color: var(--anthracite);
 }
 
 
@@ -455,7 +455,7 @@ ul.topnav li {
 
 ul.topnav li a {
   display: block;
-  color: var(--cloud);
+  color: var(--cloud)
   text-align: center;
   font-size: 16px;
   padding: 1em 1.2em;
@@ -510,12 +510,4 @@ li::marker {
   padding: 40px 10%;
 }
 
-
-#header-frame
-{
-  width:100%;
-  border:none;
-  overflow: auto!important;
-}
-
-
+*/
