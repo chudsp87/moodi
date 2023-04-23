@@ -1,6 +1,7 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 /* volcanic ash - rgb(72, 72, 73) */
 /* very peri -  var(--veryperi) -or- #6667AB */
 /* anthracite - var(--anthracite) */
@@ -8,63 +9,397 @@
 /* white sand - var(--sand) */
 
 :root {
-  --anthracite: rgb(40, 40, 45);
-  --veryperi: rgb(102, 103, 171);
-  --volcanic: rgb(72, 72, 73);
-  --cloud: rgb(240, 238, 233);
-  --sand: rgb(219, 213, 209);
+    --anthracite: rgb(40, 40, 45);
+    --veryperi: rgb(102, 103, 171);
+    --volcanic: rgb(72, 72, 73);
+    --cloud: rgb(240, 238, 233);
+    --sand: rgb(219, 213, 209);
+
+    --main-width: ;
 }
+
+/* Header/logo Title */
+.header {
+    /*    padding: 1rem;*/
+    text-align: center;
+    background: var(--anthracite);
+    color: var(--veryperi);
+    border-bottom: 0.2em solid var(--veryperi);
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 html {
-  font-size: 24px; /* px means "pixels": the base font size is now 10 pixels high */
-  font-family: 'Varela Round', sans-serif; /* this should be the rest of the output you got from Google Fonts */
-  background-color: var(--sand);
-  margin: 0;
-  border: 0;
-  padding: 0;
+    font-size: 24px;
+    /* px means "pixels": the base font size is now 10 pixels high */
+    font-family: 'Varela Round', sans-serif;
+    /* this should be the rest of the output you got from Google Fonts */
+    background-color: var(--cloud);
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 
+/*used for making notes on page of #TODOs*/
 .red-text {
-  color: red;
-  font-size: 16px;
+    color: red;
+    font-size: 16px;
 }
 
 h1 {
-  font-size: 60px;
-/*  text-align: center;*/
-  color: var(--veryperi);
-  margin: 0;
-  padding-top: 1rem;
-/*  padding: 25px 10px;*/
+    font-size: 60px;
+    font-weight: 500;
+    font-family: 'Varela Round', sans-serif;
+    /*  text-align: center;*/
+    color: var(--veryperi);
+    margin: 0;
+    /*  padding-top: 1rem;*/
+    /*  padding: 25px 10px;*/
+}
+
+
+/* Column container */
+.row {
+    display: flex;
+    /*    flex-wrap: wrap;*/
+}
+
+
+/*base-image {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: calc((100% - 775px)/2);
+    align-items: center;
+    justify-content: center;
+}*/
+
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper>img {
+    width: 60%;
+}
+
+.base-image {
+    /*  margin-left: calc((100% - 775px)/2);*/
+    margin: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    /*    left: calc((100% - 775px)/2);*/
+    /*    left: calc((100% - var(--width))/2);*/
+    margin: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+}
+
+
+.button-container {
+    margin-top: 10px;
+}
+
+.flex-3>button {
+    font-family: "Varela Round", sans-serif;
+    font-size: 14px;
+    margin: 5px;
+    padding: 0;
+}
+
+.flex-3>button:hover {
+    scale: 1.3;
+    border-width: .2em;
+}
+
+.flex-3>button .active,
+.flex-3>button:active {
+    scale: 1.3;
+    border-width: .2em;
+}
+
+button#red-button {
+    background-color: red;
+    /*  border: .1em solid red;*/
+}
+
+button#orange-button {
+    background-color: orange;
+    /*  border: .1em solid orange;*/
+}
+
+button#yellow-button {
+    background-color: yellow;
+    /*  border: .1em solid yellow;*/
+}
+
+button#green-button {
+    background-color: green;
+    /*  border: .1em solid green;*/
+}
+
+button#lime-green-button {
+    background-color: rgb(92, 231, 10);
+
+}
+
+button#cyan-button {
+    background-color: cyan;
+    /*  border: .1em solid cyan;*/
+}
+
+button#blue-button {
+    background-color: blue;
+    /*  border: .1em solid blue;*/
+}
+
+button#purple-button {
+    background-color: purple;
+    /*  border: .1em solid purple;*/
+}
+
+button#pink-button {
+    background-color: pink;
+    /*  border: .1em solid pink;*/
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    --width: calc(20%);
+    flex: var(--width);
+    background-color: var(--anthracite);
+    /*    padding: 20px;*/
+}
+
+/* Main column */
+.main {
+    --width: calc(80%);
+    /*    flex: 75%;*/
+    flex: var(--width);
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+
+}
+
+/* Top text - flex item 1 */
+.flex-1 {
+    order: 1;
+
+}
+
+/* imaage with glow overlay */
+.flex-2 {
+    order: 3;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+}
+
+
+/*.wrapper > img {*/
+/*  justify-content: center;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*    width: calc(var(--width) * 0.6);*/
+/*max-width: calc(var(--width) );*/
+/*}*/
+
+/* color button to change glow */
+.flex-3 {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+
+    height: 10em;
+}
+
+.flex-3>button {
+    flex-basis: 8%;
+    height: 4em;
+    color: var(--cloud);
+    font-weight: 500;
+    text-shadow: black 0 0 2px;
+    /*        -webkit-text-stroke: .03em black;*/
+    /*  padding: 3em 0;*/
+}
+
+.color a {
+    color: var(--cloud);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Change color on hover */
+.color a:hover {
+    background-color: var(--cloud);
+    color: var(--anthracite);
+}
+
+/* Change color on hover */
+.color a:active,
+.color a.active {
+    scale: 1.3;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--veryperi);
+    border-top: .2em solid var(--anthracite);
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+
+    .row,
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+    /*        height: 100%;*/
+    /*        width: 200px;*/
+    /*        position: fixed;*/
+    z-index: 1;
+    /*        top: 0;*/
+    /*        left: 0;*/
+    background-color: var(--anthracite);
+    overflow-x: hidden;
+    /*        padding-top: 1em; */
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a,
+.dropdown-btn {
+    /*        padding: 6px 8px 6px 16px;*/
+    padding: 1em 1em;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--cloud);
+    display: block;
+    border: none;
+    border-bottom: .08em solid var(--cloud);
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    text-decoration-style: none;
+}
+
+
+/* On mouse-over */
+.sidenav a:hover,
+.dropdown-btn:hover {
+    background-color: var(--volcanic);
+}
+
+/* Main content */
+/*    .main {*/
+/*        margin-left: 200px;*/
+/* Same as the width of the sidenav */
+/*        font-size: 20px;*/
+/* Increased text to enable scrolling */
+/*        padding: 0px 10px;*/
+/*    }*/
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: var(--veryperi);
+    /*        background-color: var(--volcanic);*/
+    color: var(--cloud);
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: var(--anthracite);
+    padding-left: 1em;
+}
+
+.dropdown-container a:active {
+    /*        background-color: blue;*/
+    /*        display: none;*/
+    /*        background-color: var(--volcanic);*/
+    /*        background-blend-mode: screen;*/
+    /*        padding-left: 1em;*/
+    /*        opacity: 0.5;*/
+}
+
+
+.active-dropdown {
+    /*    background-color: rgba(20, 20, 25, 0.3) !important;*/
+    background-color: rgba(102, 103, 171, 0.3) !important;
+    /*    background-blend-mode: multiply;*/
+    /*    color: var(--veryperi) !important;*/
+    font-size: 1.2em !important;
+}
+
+
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
 }
 
 p,
 li {
-  font-size: 26px;
-  line-height: 1.6;
-  letter-spacing: 1px;
+    font-size: 16px;
+    line-height: 1.6;
+    /*  letter-spacing: 1px;*/
 }
 
 
 
 
 body {
-  width: 1000px;
-  height: 100%;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 18px;
-  /* margin: provides space AROUND an element*/
-  /* with one value: [all sides]
+    width: 1000px;
+    height: 100%;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+    /* margin: provides space AROUND an element*/
+    /* with one value: [all sides]
   /* with two values: [top/bottom, left/right] */
-  /* with three values: [top, left/right, bottom] */
-  /* with four values: [top, right, bottom, left (clockwise)] */
-  /* valid values: <length> (can be negative); <percentange%> (of the containing block); or 'auto' */
-  margin: auto;
-  background-color: var(--cloud)
-  /* padding: provides spaces WITHIN an element */
-  padding: 2rem; 
-  border: .1em solid var(--anthracite);
-  color: var(--anthracite);
+    /* with three values: [top, left/right, bottom] */
+    /* with four values: [top, right, bottom, left (clockwise)] */
+    /* valid values: <length> (can be negative); <percentange%> (of the containing block); or 'auto' */
+    margin: auto;
+    background-color: var(--cloud)
+        /* padding: provides spaces WITHIN an element */
+        padding: 2rem;
+    border: .1em solid var(--anthracite);
+    color: var(--anthracite);
 }
 
 
@@ -76,49 +411,28 @@ body {
 /* cloud dancer - rgb(240, 238, 233) */
 /* white sand - var(--sand) */
 
-.header { 
-/*  width: calc(100% + 4rem);*/
-  width: 100%;
-/*  margin: -2rem -2rem 0 -2rem;*/
- }
-.topbar {
-  text-align: center;
-  height: 6em;
-  border-bottom: .1em solid var(--sand);
-  background-color: var(--anthracite);;
-  display: flex;
-  overflow: hidden;
-  margin: auto;  
-  width: 100%;
-}
 
-.logo  {
-  display: flex;
-  vertical-align: middle;
-  text-align: center;
-  margin: auto;
 
-}
+#logo {
+    display: block;
 
-.logo img {
-  display: inline-block;
-  height: 3em;
-  width: auto; 
-  vertical-align: middle;
-  margin: auto;
+    height: 4em;
+    /*  width: auto; */
+    vertical-align: middle;
+    margin: auto;
 }
 
 /* for centering group of items (usually buttons) */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
 }
 
 
-.topnav {
+/*.topnav {
   margin: inherit;
   width: 100%;
 }
@@ -196,5 +510,4 @@ li::marker {
   padding: 40px 10%;
 }
 
-
-
+*/

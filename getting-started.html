@@ -1,49 +1,125 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Getting Started</title>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/style.css" rel="stylesheet" />
     <link href="styles/buttons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <style>
-    body {
-        font-family: 'Varela Round', sans-serif;
+        body {
+        font-family: "Varela Round", sans-serif;
+        margin: 0;
+        width: 100%;
     }
+
     </style>
-</head>
 
 <body>
+    <!-- Header -->
     <div class="header">
-        <div class="topbar">
-            <div class="logo">
-                <img src="images/logo/moodi-logo-final.svg" />
+        <!-- <h1>My Website</h1> -->
+        <a style="margin-top: 1rem" href="index.html">
+            <img id="logo" src="images/logo/moodi-logo-final.svg" />
+        </a>
+        <p><em>Moodi tagline</em></p>
+    </div>
+    <!-- Navigation Bar -->
+    <!-- <div class="navbar">
+        <a class="active" href="moodi-flex-style.html">Home</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div> -->
+    <!-- The flexible grid (content) -->
+    <div class="row">
+        <div class="side">
+            <div class="sidenav">
+                <a href="#home">Home</a>
+                <a href="#devices">Devices</a>
+                <button class="dropdown-btn">Mood Settings
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">Happiness</a>
+                    <a href="#">Surprise</a>
+                    <a href="#">Sadness</a>
+                    <a href="#">Anger</a>
+                    <a href="#">Fear</a>
+                    <a href="#">Disgust</a>
+                </div>
+                <a href="#sharing">Sharing/Privacy</a>
+                <a href="#history">History/Mapping</a>
+                <a href="#sharing">AR View (needed?)</a>
+                <button class="dropdown-btn">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
             </div>
         </div>
-        <ul class="topnav" style="padding: 0">
-            <li style="width: 2rem">&nbsp</li>
-            <li><a class="active" href="navigation-page.html">Home</a></li>
-            <li><a href="display-settings.html">Display Settings</a></li>
-            <li><a href="connect.html">Connect New Device</a></li>
-            <li><a href="sharing.html">Sharing</a></li>
-            <li class="right"><a href="index.html">Index</a></li>
-        </ul>
+        <div class="main" style="padding: 1em 7em 1em 2em;">>
+            <div class="flex-1">
+                <h1>Welcome!</h1>
+                <p>Welcome to Moodi!</p>
+                <p>At Moodi we're dedicated to helping inviduals be better understand others' emotions and be able to express on the <em>outside</em> what they feel on the <em>inside</em>. Moodi glasses enable the wearer to visually see other Moodi-users' emotion/mood/availability thru a colored "aura" or "glow" that envelops the individual and corresponds to that user's current mood.</p>
+                <p>In order to best serve you, there is some preliminary information we need to gather from you to get everything rolling. There's also several features we'd like to quickly share with you so can easily navigate the app to make any changes that you may wish to in the future. </p>
+                <p>So if you're ready, let's get started!</p>
+                <div style="display: flex; text-align: center;"><button class="electric" onclick="window.location='getting-started-2'" style="margin: auto" role="button"><span>Let's Get Started!</span></button></div>
+            </div>
+        </div>
     </div>
-    <!--     <img class="logo" style="margin: 0; padding=10px; position: top-left" src="images/logo/logo-final/green.png" alt="My test image" />
-    <svg height="0" width="0">
-        <mask id="mymask">
-            <image id="logo" xlink:href="" x="0" y="0" height="50px" width="50px" />
-        </mask>
-    </svg>
-    <img class="logo" src="images/logo/logo-final/green.png" alt="My test image" /> -->
-    <h1>Welcome!</h1>
-    <p>Welcome to Moodi!</p>
-    <p>At Moodi we're dedicated to helping inviduals be better understand others' emotions and be able to express on the <em>outside</em> what they feel on the <em>inside</em>. Moodi glasses enable the wearer to visually see other Moodi-users' emotion/mood/availability thru a colored "aura" or "glow" that envelops the individual and corresponds to that user's current mood.</p>
-    <p>In order to best serve you, there is some preliminary information we need to gather from you to get everything rolling. There's also several features we'd like to quickly share with you so can easily navigate the app to make any changes that you may wish to in the future. </p>
-    <p>So if you're ready, let's get started!</p>
-    <div style="display: flex; text-align: center;"><button class="electric" onclick="window.location='getting-started-2'" style="margin: auto" role="button"><span>Let's Get Started!</span></button></div>
+            <!-- Footer -->
+            <div  class="footer">
+                <h2>Footer</h2>
+            </div>
+            
+            <script>
+            /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+
+            for (i = 0; i < dropdown.length; i++) {
+                dropdown[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+                    if (dropdownContent.style.display === "block") {
+                        dropdownContent.style.display = "none";
+                    } else {
+                        dropdownContent.style.display = "block";
+                    }
+                });
+            }
+            </script>
+            <script>
+            /* Add click event listener to dropdown container elements */
+            // document.querySelectorAll("div.dropdown-container > a").forEach(function(element) {
+            document.querySelectorAll("div.sidenav > a, div.dropdown-container > a").forEach(function(element) {
+                element.addEventListener('click', function(event) {
+                    // Remove the active-dropdown class from all dropdown container elements
+                    document.querySelectorAll('div.sidenav > a, .dropdown-container a').forEach(function(el) {
+                        el.classList.remove('active-dropdown');
+                    });
+
+                    // Add the active-dropdown class to the clicked element
+                    event.target.classList.add('active-dropdown');
+                });
+            });
+            </script>
+            <script type="text/javascript">
+            $(function() {
+                $("div.sidenav > a, div.dropdown-container > a").click(function() {
+                    $.get("#");
+
+                    return false; // prevent default browser refresh on "#" link
+                });
+            });
+            </script>
 </body>
 
 </html>
