@@ -28,9 +28,11 @@
     
 var WheelMenu = {};
 // export default (function d3_sunburst_menu(tree, node, container) {
-    WheelMenu.create = (function d3_sunburst_menu(tree, node, container) {
+    WheelMenu.create = (function d3_sunburst_menu(tree, node, appName) {
     // get location of invokation
 
+    console.log(appName)
+    var container = d3.select("#"+ appName);
     var radius = _radius = 160;
     var rotate = _rotate = Math.PI / 2;
     // var radius = 160;
@@ -159,7 +161,7 @@ var WheelMenu = {};
         .nodes(tree);
 
     // we're only using n(ode) to set initial menu position
-    var radialmenu = container.append("g").attr("id", "radialmenu").attr("transform", "translate(" + node.x + "," + node.y + ")");
+    var radialmenu = container.append("g").attr("id", appName+"-radialmenu").attr("transform", "translate(" + node.x + "," + node.y + ")");
 
     // define a dropshadow
     var filter = container.append("defs").append("filter")
@@ -278,12 +280,12 @@ var WheelMenu = {};
         }
 
         // bind tree (argument) to menu
-        group = d3.select("#radialmenu").selectAll("g.menuitem").data(partition(tree), function(n) {
+        group = d3.select("#"+appName+"-radialmenu").selectAll("g.menuitem").data(partition(tree), function(n) {
             return n.id;
         });
 
         // bind back button to menu
-        cursor = d3.select("#radialmenu").selectAll("g.cursor").data(cursorData, function(n) {
+        cursor = d3.select("#"+appName+"-radialmenu").selectAll("g.cursor").data(cursorData, function(n) {
             return n.id;
         });
 
@@ -388,7 +390,7 @@ var WheelMenu = {};
                 };
             });
 
-        d3.select("#radialmenu").selectAll("g")
+        d3.select("#"+appName+"-radialmenu").selectAll("g")
             .on("mouseover", function(n) {
                 this.classList.add("menuitem")
                 this.classList.add("mouseover")

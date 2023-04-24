@@ -59,7 +59,7 @@ svg text {
 svg text::selection {
     background: none;
 }
-#svgapp {
+.svgapp {
     width:100%;
     height:100%;
     position:relative;
@@ -67,7 +67,7 @@ svg text::selection {
     margin-top: 0%;
     overflow : hidden;
 }
-#svgapp > g {
+.svgapp > g {
     transform: translate(calc(50%), calc(50%));
 }
 .hide-me

@@ -163,6 +163,7 @@ export default class ColorWheel
             // Store the name
             this.name = settingsJSON["name"];
             this.storageName = this.name + "-" + "moodPreferences";
+            this.appName = this.name + "-" + "svgapp";
 
             // Create mood preferences (internal)
             this.moodPreferences = {};
@@ -195,6 +196,7 @@ export default class ColorWheel
 
         // Set up tree for d3 tree
         let tree = {};
+        tree["nid"] = 4000*Math.random()
         tree["_children"] = [];
         let currTree = {};
         tree["_children"].push(currTree);
@@ -206,6 +208,10 @@ export default class ColorWheel
 
         // basic callback func
         function default_callback(scope, node, dom) {
+            if (window.MOODI.mode !== "colors")
+            {
+                scope = window.MOODI.primary
+            }
             console.log(scope.name + ": " + node.id);
             console.log(scope.moodPreferences[node.id]["shown"]);
             scope.updateEmotionState(node.id, dom);
@@ -220,7 +226,7 @@ export default class ColorWheel
                 _currTree["name"] = _currTree["name"] || _curr["mood-name"]; 
                 _currTree["fill"] = _currTree["fill"] || _curr["color"]; 
                 _currTree["_children"] = _currTree["_children"] || [];
-                _currTree["callback"] = _currTree["callback"] || function(node, dom){default_callback(window.MOODI.primary, node, dom)};
+                _currTree["callback"] = _currTree["callback"] || function(node, dom){default_callback(scope, node, dom)};
                 // Also set internal mood preferences dictionary
                 scope.moodPreferences[_currTree["id"].toLowerCase()] = {"id" : _currTree["id"], "treeElem" : _currTree};
         }
@@ -316,19 +322,27 @@ export default class ColorWheel
 
         //console.log(this.moodPreferences)
         
-        var svg = createElementNS("svg", {});
-        svg.setAttribute("id","svgapp");
+        let svg = createElementNS("svg", {});
+        svg.setAttribute("id",this.appName);
+        svg.setAttribute("class","svgapp");
         svg.setAttribute("name",this.name);
         this.svg = svg;
         this.svgParent = null;
-        setTimeout(()=>{
-            scope.d3_sunburst_menu = new WheelMenu.create(tree, {x:0,y:0} , d3.select("#svgapp"));
+        setTimeout(async()=>{
+            console.log(scope.appName)
+            scope.d3_sunburst_menu = new WheelMenu.create(tree, {x:0,y:0}, scope.appName);
+
 
             // Update
             Object.values(scope.moodPreferences).forEach(pref=>{
+                //console.log(scope["name"])
                 if (pref["shown"] == false)
                 {
                     pref["treeElem"]["dom"].classList.add("hide-me")
+                }
+                else
+                {
+                    pref["treeElem"]["dom"].classList.remove("hide-me")
                 }
             });
             // var d3_sunburst_menu = new Menu(tree, {x:0,y:0} , d3.select("#svgapp"));

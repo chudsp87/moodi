@@ -41,9 +41,9 @@
     <div class="row">
         <div class="side">
             <div class="sidenav">
-                <a href="#home">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#devices">Devices</a>
-                <button class="dropdown-btn">Mood Settings
+                <!-- <button class="dropdown-btn">Mood Settings
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-container">
@@ -53,7 +53,8 @@
                     <a href="#">Anger</a>
                     <a href="#">Fear</a>
                     <a href="#">Disgust</a>
-                </div>
+                </div> -->
+                <a href="mood-settings.html">Mood Settings</a>
                 <a href="#sharing">Sharing/Privacy</a>
                 <a href="#history">History/Mapping</a>
                 <a href="#sharing">AR View (needed?)</a>
@@ -168,13 +169,13 @@
         let cw, cw2;
         if (mode === "mine")
         {
-           cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
            cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
+           cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
         } 
         else
         {
-           cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
            cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
+           cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
         }
 
         let html = await cw.generateHTML();
@@ -191,6 +192,7 @@
             let otherMode = mode === "others" ? "mine" : "others";
 
             domElem.innerHTML = `
+            <h5><a href="/mood-settings.html">\<\< Back</a></h5>
             
             <h1>Modify ${mode} emotions settings</h1>
             `;
@@ -203,6 +205,7 @@
         else
         {
             domElem.innerHTML = `
+                <h5><a href="/mood-settings.html">\<\< Back</a></h5>
                 <h3>Modify Emotion Color</h3>
                 <h5>Type in an existing emotion and select a color value to change it to.</h5>
                 <h5>Note that these colors are subjective to you only.</h5>
@@ -226,8 +229,8 @@
         if (mode === "mine")
         {
             window.MOODI.primary = cw;
-            wrap.appendChild(html);
             wrap2.appendChild(html2);
+            wrap.appendChild(html);
         }
         else
         {
