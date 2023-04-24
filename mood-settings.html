@@ -41,9 +41,9 @@
     <div class="row">
         <div class="side">
             <div class="sidenav">
-                <a href="#home">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#devices">Devices</a>
-                <button class="dropdown-btn">Mood Settings
+                <!-- <button class="dropdown-btn">Mood Settings
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-container">
@@ -53,10 +53,11 @@
                     <a href="#">Anger</a>
                     <a href="#">Fear</a>
                     <a href="#">Disgust</a>
-                </div>
+                </div> -->
+                <a href="mood-settings.html">Mood Settings</a>
                 <a href="#sharing">Sharing/Privacy</a>
                 <a href="#history">History/Mapping</a>
-                <a href="#sharing">AR View (needed?)</a>
+                <a href="ar-view.html">AR View (needed?)</a>
                 <button class="dropdown-btn">Dropdown
                     <i class="fa fa-caret-down"></i>
                 </button>
@@ -67,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="main" style="padding: 1em 7em 1em 2em;">>
+        <div class="main" style="padding: 1em 7em 1em 2em;">
             <div class="flex-1">
                 
                 <!-- <div class="basic-text-page" style="padding: 1em 7em 1em 2em;"> -->
@@ -160,37 +161,45 @@
         let r = await fetch("/color-wheel/color-wheel.json");
         let json = await r.json();
         let json2 = JSON.parse(JSON.stringify(json))
+        let json3 = JSON.parse(JSON.stringify(json))
 
         json["name"] = "mine";
         json2["name"] = "others";
+        json3["name"] = "colors";
 
         let interactable = mode === "color" ? false : true;
-        let cw, cw2;
+        let cw, cw2, cw3;
         if (mode === "mine")
         {
-           cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
            cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
+           cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
+           cw3 = new ColorWheel({interactable:interactable, colorWheelConfig:json3});
         } 
         else
         {
-           cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
            cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
+           cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
+           cw3 = new ColorWheel({interactable:interactable, colorWheelConfig:json3});
         }
 
         let html = await cw.generateHTML();
         let html2 = await cw2.generateHTML();
+        let html3 = await cw3.generateHTML();
 
         let wrap = document.createElement("div");
         let wrap2 = document.createElement("div");
+        let wrap3 = document.createElement("div");
         wrap.style.height = "500px";
         wrap2.style.display = "none";
 
 
         if (mode === "others" || mode === "mine")
         {
+            wrap3.style.display = "none";
             let otherMode = mode === "others" ? "mine" : "others";
 
             domElem.innerHTML = `
+            <h5><a href="/mood-settings.html">\<\< Back</a></h5>
             
             <h1>Modify ${mode} emotions settings</h1>
             `;
@@ -202,7 +211,10 @@
         }
         else
         {
+            wrap3.style.height = "500px";
+            wrap.style.height = "0px";
             domElem.innerHTML = `
+                <h5><a href="/mood-settings.html">\<\< Back</a></h5>
                 <h3>Modify Emotion Color</h3>
                 <h5>Type in an existing emotion and select a color value to change it to.</h5>
                 <h5>Note that these colors are subjective to you only.</h5>
@@ -217,17 +229,19 @@
             updateemotioncolor.onclick = ()=>{
                 MOODI.setEmotionColor("mine", document.getElementById("emotionname").value.toLowerCase(), document.getElementById("emotioncolor").value+"")
                 MOODI.setEmotionColor("others", document.getElementById("emotionname").value.toLowerCase(), document.getElementById("emotioncolor").value+"")
+                MOODI.setEmotionColor("colors", document.getElementById("emotionname").value.toLowerCase(), document.getElementById("emotioncolor").value+"")
             }
         }
 
         domElem.appendChild(wrap);
         domElem.appendChild(wrap2);
+        domElem.appendChild(wrap3);
 
         if (mode === "mine")
         {
             window.MOODI.primary = cw;
-            wrap.appendChild(html);
             wrap2.appendChild(html2);
+            wrap.appendChild(html);
         }
         else
         {
@@ -235,6 +249,7 @@
             wrap.appendChild(html2);
             wrap2.appendChild(html);
         }
+        wrap3.appendChild(html3)
     
     }
 

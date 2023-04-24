@@ -101,8 +101,9 @@ h1 {
     /*    left: calc((100% - 775px)/2);*/
     /*    left: calc((100% - var(--width))/2);*/
     margin: auto;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
+    z-index: 999;
 }
 
 .visible {
