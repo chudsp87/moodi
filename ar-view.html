@@ -197,11 +197,9 @@
         //Color in RGB 
         let rgb = window.getComputedStyle(d).color;
         document.body.removeChild(d);
-        console.log(rgb)
         // let hex = "#" + /rgb\([\d]+, [\d]+, [\d]+\)/i.exec(rgb);
         let tmp = rgb.substring(4,rgb.length-1).split(", ");
         let hex = "#" + parseInt(tmp[0]).toString(16).padStart(2, "0") + parseInt(tmp[1]).toString(16).padStart(2, "0") + parseInt(tmp[2]).toString(16).padStart(2, "0");
-        console.log(hex)
 
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
