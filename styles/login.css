@@ -21,6 +21,7 @@ body {
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  padding-bottom: 1em;
 }
 #login-sso {
   position: relative;
@@ -76,15 +77,17 @@ input[type="password"]:focus {
 }
 
 input[type="submit"] {
-  margin-top: 28px;
+  margin-top: 2em;
+
   width: 220px;
-  height: 36px;
-  background: darkcyan;
+  height: 2.5em;
+  background: var(--veryperi);
   border: none;
   border-radius: 3px;
-  color: #FFF;
+  color: var(--cloud);
   font-family: 'Varela Round', sans-serif;
   font-weight: 500;
+  font-size: 18px;
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
