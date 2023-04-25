@@ -20,54 +20,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.auto.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="./color-wheel/d3-sunburst-menu-master/d3-sunburst-menu-master/src/d3-sunburst-menu.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <body>
     <!-- Header -->
-    <div class="header">
-        <!-- <h1>My Website</h1> -->
-        <a style="margin-top: 1rem" href="index.html">
-            <img id="logo" src="images/logo/moodi-logo-final.svg" />
-        </a>
-        <p><em>Moodi tagline</em></p>
-    </div>
-    <!-- Navigation Bar -->
-    <!-- <div class="navbar">
-        <a class="active" href="moodi-flex-style.html">Home</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-    </div> -->
+    <div id="header"></div>
+    
     <!-- The flexible grid (content) -->
     <div class="row">
-        <div class="side">
-            <div class="sidenav">
-                <a href="index.html">Home</a>
-                <a href="#devices">Devices</a>
-                <!-- <button class="dropdown-btn">Mood Settings
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">Happiness</a>
-                    <a href="#">Surprise</a>
-                    <a href="#">Sadness</a>
-                    <a href="#">Anger</a>
-                    <a href="#">Fear</a>
-                    <a href="#">Disgust</a>
-                </div> -->
-                <a href="mood-settings.html">Mood Settings</a>
-                <a href="#sharing">Sharing/Privacy</a>
-                <a href="#history">History/Mapping</a>
-                <a href="ar-view.html">AR View (needed?)</a>
-                <button class="dropdown-btn">Dropdown
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
+        <div id="sidenav"></div>
+        
         <div class="main" style="padding: 1em 7em 1em 2em;">
             <div class="flex-1">
                 
@@ -76,18 +38,10 @@
             </div>
             <div class="flex-2">
                 <div class="wrapper">
-                    <!-- <img src="images/glow-preview/color-glow-base.png" alt="Base Image" class="base-image"> -->
+                    
                     <img src="images/glow-preview/color-glow-base.png" alt="Base Image" class="base-image">
                     <img src="images/glow-preview/red-glow.png" alt="Overlay 1" class="overlay" id="img-overlay">
-                    <!-- <img src="images/glow-preview/red-glow.png" alt="Overlay 1" class="overlay" id="red-overlay">
-                    <img src="images/glow-preview/orange-glow.png" alt="Overlay 2" class="overlay" id="orange-overlay">
-                    <img src="images/glow-preview/yellow-glow.png" alt="Overlay 3" class="overlay" id="yellow-overlay">
-                    <img src="images/glow-preview/lime-green-glow.png" alt="Overlay 1" class="overlay" id="lime-green-overlay">
-                    <img src="images/glow-preview/green-glow.png" alt="Overlay 1" class="overlay" id="green-overlay">
-                    <img src="images/glow-preview/cyan-glow.png" alt="Overlay 2" class="overlay" id="cyan-overlay">
-                    <img src="images/glow-preview/blue-glow.png" alt="Overlay 3" class="overlay" id="blue-overlay">
-                    <img src="images/glow-preview/purple-glow.png" alt="Overlay 1" class="overlay" id="purple-overlay">
-                    <img src="images/glow-preview/pink-glow.png" alt="Overlay 2" class="overlay" id="pink-overlay"> -->
+
                 </div>
             </div>
             <div class="flex-3">
@@ -97,21 +51,20 @@
                 <button class="button moodbtn" mood='amazed'>Amazed</button>
             </div>
             <div id="mood-settings"></div>
-            <!-- <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-            <br>
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
+            
         </div>
     </div>
     <!-- Footer -->
-    <div class="footer">
-        <h2>Footer</h2>
-    </div>
+    <div id="footer"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#header").load("components/header.html");
+            $("#sidenav").load("components/sidenav.html");
+            $("#footer").load("components/footer.html");
+            // $("#bottom-buttons").load("components/bottom-buttons.html");
+        });
+    </script>
     <script>
     /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
     var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -129,6 +82,7 @@
         });
     }
     </script>
+
     <script>
     /* Add click event listener to dropdown container elements */
     // document.querySelectorAll("div.dropdown-container > a").forEach(function(element) {
@@ -233,8 +187,9 @@
         var colorInHSL = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
         // $rootScope.$emit('colorChanged', {colorInHSL});
 
-        
-        document.getElementById("img-overlay").style.filter = ` sepia(0.1) brightness(5) hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
+        document.getElementById("img-overlay").style.filter = ` hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
+
+        // document.getElementById("img-overlay").style.filter = ` sepia(0.1) brightness(5) hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
     }
 
 

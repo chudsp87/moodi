@@ -141,6 +141,16 @@ hr {
     margin: auto;
 }
 
+.overlay-mid {
+    position: absolute;
+    top: 0;
+    /*    left: calc((100% - 775px)/2);*/
+    /*    left: calc((100% - var(--width))/2);*/
+    margin: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
 .overlay {
     position: absolute;
     top: 0;
@@ -361,7 +371,7 @@ button#pink-button {
     color: var(--cloud);
     display: block;
     border: none;
-    border-bottom: .08em solid var(--cloud);
+    border-bottom: .05em solid var(--volcanic);
     background: none;
     width: 100%;
     text-align: left;
