@@ -14,7 +14,17 @@
             margin: 0;
             width: 100%;
         }
+        #sync-btn:hover {
+            opacity: 0.85;
+            background-color: var(--cloud);
+            box-shadow: 0 0 3px var(--anthracite);
+        }
     </style>
+    <script type="text/javascript">
+            function showMessage() {
+                alert("SUCCESS!  GLASSES SYNCED!");
+            }
+        </script>
 </head>
 
 <body>
@@ -22,18 +32,31 @@
     <div class="row">
         <div id="sidenav"></div>
         <div class="main" style="padding: 1em 7em 1em 2em; flex-direction: column;">
-            <!-- <div class="wrapper"> -->
-            <h2 style="color: var(--veryperi);">Now let's pair your glasses...</h2>
-            <h3 style="font-weight: 500"> First, make sure your glasses are turned on...</h3>
-            <h3 style="font-weight: 500"> Then just click the "sync" button below. That's it!</h3>
-            <input type="button" value="sync">
-            <div class="bottom-buttons row" style="justify-content: center;">
-                <a id="back" style="width: 15%; height: 2.5em;" href="getting-started-2.html">&laquo; go back</a>
-                <a id="next" style="width: 15%; height: 2.5em;" href="getting-started-4.html">next &raquo;</a>
+            
+            <div class="row" id="instructions-plus-button" style="align-items: center;">
+                <div class="column" style="width: 60%;">
+                    <h2 style="color: var(--veryperi);">Now let's pair your glasses...</h2>
+                
+                    <!-- <div class="column" id="instructions"> -->
+                    <h3 style="font-weight: 500"> First, make sure your glasses are turned on...</h3>
+                    <h3 style="font-weight: 500"> Then just click the "sync" button to the right...<br> <strong>That's it!</strong></h3>
+                    <!-- </div> -->
+                    <br>
+                    <br>
+                    <div class="bottom-buttons row" style="justify-content: center; margin-left: -6em;"> <!-- style="display: flex; justify-content: center;"> -->
+                        <a id="back" style="width: 7em; height: 2.5em;" href="getting-started-2.html">&laquo; go back</a>
+                        <a id="next" style="width: 7em; height: 2.5em;" href="getting-started-4.html">next &raquo;</a>
+                    </div>
+                </div>
+                <div id="sync" style="align-items: center; justify-content: center;">
+                    <input id="sync-btn" class="bottom-buttons" type="button" value="sync" style="margin-bottom: 6em;  height: 2.5em; width: 7em; flex: 60%; font-weight: 600; font-size: 26px; background-color: var(--anthracite); color: var(--veryperi); border-radius: .5em; border: .15em solid var(--veryperi); cursor: pointer;" onClick="showMessage()">
+                </div>
             </div>
+            <!-- </div> -->
         </div>
+        <div id="footer"></div>
     </div>
-    <div id="footer"></div>
+    
     <script>
     $(document).ready(function() {
         $("#header").load("components/header.html");
