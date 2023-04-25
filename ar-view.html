@@ -98,10 +98,9 @@
         });
     });
     </script>
-    
-</body>
-
+    </body>
 </html>
+
 
 <script type="module">
 
@@ -177,11 +176,11 @@
         h = Math.round(360*h);
 
         var colorInHSL = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
-        $rootScope.$emit('colorChanged', {colorInHSL});
+        // $rootScope.$emit('colorChanged', {colorInHSL});
 
         // document.getElementById("img-overlay").style.filter = ` hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
 
-        document.getElementById("img-overlay").style.filter = ` sepia(0.1) brightness(5) hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
+        document.getElementById("img-overlay").style.filter = ` brightness(3) saturate(10) hue-rotate(${h}deg)`;
     }
 
 
