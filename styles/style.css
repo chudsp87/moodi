@@ -330,8 +330,8 @@ button#pink-button {
     height: 4em;
     color: var(--cloud);
     font-weight: 500;
-    text-shadow: black 0 0 2px;
-    /*        -webkit-text-stroke: .03em black;*/
+/*    text-shadow: black 0 0 2px;*/
+            -webkit-text-stroke: .03em black;
     /*  padding: 3em 0;*/
 }
 

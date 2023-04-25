@@ -15,6 +15,29 @@
         width: 100%;
     }
 
+    .flex-3 {
+        display: flex;
+/*        justify-content: space-around;*/
+        gap: 1em;
+
+    }
+
+    .moodbtn {
+        align-self: center;
+        height: 3em;
+        width: 10em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .btn {
+        font-size: 20px;
+        padding: 1em 2em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
     </style>
     <link href="./color-wheel/color-wheel.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" type="text/javascript" charset="utf-8"></script>
@@ -45,10 +68,10 @@
                 </div>
             </div>
             <div class="flex-3">
-                <button class="button moodbtn" mood='happy'>Happy</button>
-                <button class="button moodbtn" mood='sad'>Sad</button>
-                <button class="button moodbtn" mood='surprise'>Surprised</button>
-                <button class="button moodbtn" mood='amazed'>Amazed</button>
+                <button class="button moodbtn" mood='happy'><span class="btn" >Happy</span></button>
+                <button class="button moodbtn" mood='sad'><span class="btn" >Sad</span></button>
+                <button class="button moodbtn" mood='surprise'><span class="btn" >Surprised</span></button>
+                <button class="button moodbtn" mood='amazed'><span class="btn" >Amazed</span></button>
             </div>
             <div id="mood-settings"></div>
             
