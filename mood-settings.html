@@ -158,7 +158,7 @@
         }
         window.MOODI.mode = mode;
 
-        let r = await fetch("/color-wheel/color-wheel.json");
+        let r = await fetch("./color-wheel/color-wheel.json");
         let json = await r.json();
         let json2 = JSON.parse(JSON.stringify(json))
         let json3 = JSON.parse(JSON.stringify(json))
