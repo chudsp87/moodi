@@ -204,7 +204,7 @@ hr {
 }
 
 .flex-3>button {
-    border-radius: 1em;
+    border-radius: .4em;
 }
 
 .flex-3>button:hover {
