@@ -74,6 +74,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 
 /*    margin: auto;*/
 }
@@ -101,28 +102,37 @@ h1 {
 
 
 #back, #next {
+
     height: 3em;
     width: 25%;
     border-radius: .4em;
-/*    display: inline-block;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1em;
 /*    padding: 3em;*/
     font-size: 22px;
 /*    padding: 1em;*/
-/*    text-decoration: none;*/
+    text-decoration: none;
+    font-weight: 600;
 /*    text-align: center;*/
 /*    vertical-align: middle;*/
 /*    margin: auto;*/
 }
 
+/*#back > span {
+    margin-left: auto;
+
+}*/
+
 #next {
     background-color: var(--veryperi);
-    color: var(--sand);
-    border: .1em solid var(--sand);
+    color: var(--cloud);
+    border: .1em solid var(--cloud);
     
 }
 #back {
-    background-color: var(--sand);
+    background-color: var(--cloud);
     color: var(--veryperi);
     border: .1em solid var(--veryperi);
 
