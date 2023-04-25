@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: "Varela Round", sans-serif;
+            margin: 0;
+            width: 100%;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="row">
+        <div id="sidenav"></div>
+<div id="main">
+        <h2> First things first: Let's get some basic information about you</h2>
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" value="First name...">
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" value="Last name...">
+    <!-- <form action="/action_page.php"> -->
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday">
+    <input type="submit">
+    <!-- </form> -->
+    <div class="container">
+        <ul class="button-group">
+            <li class="buttom-button"><a id="back-button" href="getting-started.html">&laquo; go back</a></li>
+            <li class="buttom-button"><a id="next-button" href="getting-started-3.html">next &raquo;</a></li>
+        </ul>
+    </div>
+</div>
+    <div id="footer"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#header").load("components/header.html");
+            $("#sidenav").load("components/sidenav.html");
+            $("#footer").load("components/footer.html");
+            // $("#bottom-buttons").load("components/bottom-buttons.html");
+        });
+    </script>
+</body>
+
+</html>
