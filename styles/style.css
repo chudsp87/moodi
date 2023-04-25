@@ -14,7 +14,8 @@
     --volcanic: rgb(72, 72, 73);
     --cloud: rgb(240, 238, 233);
     --sand: rgb(219, 213, 209);
-
+    --oak: rgb(141, 121, 97);
+    --taupe: rgb(113, 92, 86);
     --main-width: ;
 }
 
@@ -61,23 +62,88 @@ h1 {
     /*  padding: 25px 10px;*/
 }
 
+.purple-text {
+/*    font-style:italic;*/
+/*    font-size: 1.15em;*/
+    font-weight: 600;
+    color: var(--veryperi);
+}
+
+/* "two bottom buttons" */
+#bottom-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+/*    margin: auto;*/
+}
+
+.updateemotion {
+    height: 3em;
+    width: 20%;
+    border-radius: .4em;
+    display: inline-block;
+    margin: 1em;
+/*    padding: 3em;*/
+    font-size: 22px;
+    padding: 1em;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--veryperi);
+    color: var(--sand);
+    border: .1em solid var(--sand); 
+    margin: auto;
+}
+
+
+#back, #next {
+    height: 3em;
+    width: 28%;
+    border-radius: .4em;
+    display: inline-block;
+    margin: 1em;
+/*    padding: 3em;*/
+    font-size: 22px;
+    padding: 1em;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+/*    margin: auto;*/
+}
+
+#next {
+    background-color: var(--veryperi);
+    color: var(--sand);
+    border: .1em solid var(--sand);
+    
+}
+#back {
+    background-color: var(--sand);
+    color: var(--veryperi);
+    border: .1em solid var(--veryperi);
+
+}
+#back:hover, #next:hover {
+/*    background-color: var(--veryperi);*/
+    font-style: bold;
+    box-shadow: 0px 0px .3em var(--volcanic);
+    transition: 0.3s ease;
+}
+
 
 /* Column container */
 .row {
     display: flex;
     /*    flex-wrap: wrap;*/
 }
+hr {
 
-
-/*base-image {
-    max-width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: calc((100% - 775px)/2);
-    align-items: center;
-    justify-content: center;
-}*/
+  height:3px;
+  border-width:0;
+  background-color:var(--veryperi);
+  width: 100%;
+}
 
 
 .wrapper {
@@ -95,14 +161,25 @@ h1 {
     margin: auto;
 }
 
+.overlay-mid {
+    position: absolute;
+    top: 0;
+    /*    left: calc((100% - 775px)/2);*/
+    /*    left: calc((100% - var(--width))/2);*/
+    margin: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
 .overlay {
     position: absolute;
     top: 0;
     /*    left: calc((100% - 775px)/2);*/
     /*    left: calc((100% - var(--width))/2);*/
     margin: auto;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
+    z-index: 999;
 }
 
 .visible {
@@ -179,11 +256,15 @@ button#pink-button {
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
-.side {
+#sidenav {
+    background-color: var(--anthracite);
     --width: calc(20%);
     flex: var(--width);
-    background-color: var(--anthracite);
+}
+.side {
+/*    background-color: var(--anthracite);*/
     /*    padding: 20px;*/
+    padding-bottom: 2.5em;
 }
 
 /* Main column */
@@ -194,7 +275,7 @@ button#pink-button {
     display: flex;
     flex-direction: column;
     padding: 1em;
-
+    padding-bottom: 2.5em;
 }
 
 /* Top text - flex item 1 */
@@ -270,10 +351,14 @@ button#pink-button {
 
 /* Footer */
 .footer {
-    padding: 20px;
+/*    padding: 20px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background: var(--veryperi);
-    border-top: .2em solid var(--anthracite);
+    background-color: var(--anthracite);
+    border-top: .2em solid var(--veryperi);
+    color: var(--veryperi);
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -284,6 +369,7 @@ button#pink-button {
         flex-direction: column;
     }
 }
+
 
 /* Fixed sidenav, full height */
 .sidenav {
@@ -308,7 +394,7 @@ button#pink-button {
     color: var(--cloud);
     display: block;
     border: none;
-    border-bottom: .08em solid var(--cloud);
+    border-bottom: .1em solid var(--volcanic);
     background: none;
     width: 100%;
     text-align: left;
@@ -322,6 +408,7 @@ button#pink-button {
 .sidenav a:hover,
 .dropdown-btn:hover {
     background-color: var(--volcanic);
+    border-bottom: .1em solid var(--sand);
 }
 
 /* Main content */
@@ -366,6 +453,15 @@ button#pink-button {
 }
 
 
+.active-dropdown-item {
+    background-color: rgba(102, 103, 171, 0.3) !important;
+    font-size: 1.2em !important;
+}
+
+.active-sidenav-item {
+    background-color: var(--veryperi) !important;
+    font-size: 1.2em !important;
+}
 
 /* Optional: Style the caret down icon */
 .fa-caret-down {
@@ -431,83 +527,3 @@ body {
     height: 100%;
 }
 
-
-/*.topnav {
-  margin: inherit;
-  width: 100%;
-}
-
-ul.topnav {
-  list-style-type: none;
-  font-size: 12px;
-  padding: 0;
-  overflow: hidden;
-  background-color: var(--anthracite);
-  margin: 0;
-}
-
-ul.topnav li {
-  float: left;
-  border-right-color: var(--sand);
-  border-right-style: solid;
-  border-right-width: .1em;
-}
-
-ul.topnav li a {
-  display: block;
-  color: var(--cloud)
-  text-align: center;
-  font-size: 16px;
-  padding: 1em 1.2em;
-  text-decoration: none;
-  transition: all .7s;
-}
-
-ul.topnav li:nth-child(2), li:last-child {
-  border-left-color: var(--sand);
-  border-left-style: solid;
-  border-left-width: .1em;
-}
-
-ul.topnav li:first-child {
-    border-right: none;
-}
-ul.topnav li:last-child {
-    border-right: none;
-}
-
-ul.topnav li a:hover:not(.active) {
-  background-color: var(--volcanic)
-}
-
-ul.topnav li a:hover.active {
-  transition: all .2s;
-  background-color: rgb(93, 94, 164);
-}
-
-ul.topnav li a.active {
-  background-color: var(--veryperi);
-  color: rgb(6, 6, 48);
-  font-weight: 600;
-}
-
-ul.topnav li.right {
-  float: right;
-}
-
-@media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
-}
-
-li::marker {
-    color: #65DDB2;
-    font-size: 1.2em;
-}
-
-
-.instructions {
-  padding: 40px 10%;
-}
-
-*/

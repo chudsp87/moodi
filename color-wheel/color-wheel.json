@@ -1,0 +1,53 @@
+{
+    "name" : "test",
+    "style" :
+        {
+            "position" : "absolute",
+            "padding" : "0",
+            "background" : "rgba(0,0,0,0)",
+            "pointer-events" : "none",
+            "height" :"100%",
+            "width" :"100%",
+            "border-radius" : "50%",
+            "list-style" : "none",
+            "overflow" : "hidden"
+        },
+
+    "moods" : [
+        {
+            "mood-name" : "happy",
+            "color" : "yellow",
+            "moods" : [
+                {"mood-name": "joyful", "color" : "green"},
+                {"mood-name": "proud", "color" : "green"},
+                {"mood-name": "optimistic", "color" : "green"},
+                {"mood-name": "peaceful", "color" : "green"}
+            ] 
+        },
+        {
+            "mood-name" : "surprise",
+            "color" : "red",
+            "moods" : [
+                {"mood-name": "confused", "color" : "orange"},
+                {"mood-name": "startled", "color" : "orange"},
+                {"mood-name": "amazed", "color" : "orange"},
+                {"mood-name": "excited", "color" : "orange",
+                    "moods" : [
+                        {"mood-name" : "nervous", "color" : "pink"},
+                        {"mood-name" : "anxious", "color" : "pink"}
+                    ]
+                }
+            ] 
+        },
+        {
+            "mood-name" : "sad",
+            "color" : "blue",
+            "moods" : [
+                {"mood-name": "guilty", "color" : "purple"},
+                {"mood-name": "despair", "color" : "purple"},
+                {"mood-name": "lonely", "color" : "purple"},
+                {"mood-name": "bored", "color" : "purple"}
+            ] 
+        }
+    ]
+}

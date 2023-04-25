@@ -125,11 +125,11 @@ input[type="submit"]:active {
 .center {
   margin-top: 0px;
   margin-left: 250px;
-  position: absolute;
+/*  position: absolute;*/
   top: 55%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+/*  transform: translate(-50%, -50%);*/
 }
 .or {
   position: absolute;

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device List</title>
+    <style>
+        
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        :root {
+            --toggle-height: 1.2em;
+            --toggle-width: 3em;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            
+            width: var(--toggle-width);
+/*            --toggle-height: 1.2em;*/
+            height: var(--toggle-height);
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: calc(var(--toggle-height)*.8);
+            width: calc(var(--toggle-height)*.8);
+            left: calc(var(--toggle-height)*.1);
+            bottom: calc(var(--toggle-height)*.1);
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: rgb(102, 103, 171);
+        }
+
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+            -ms-transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+            transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+        }
+
+        .slider.round {
+            border-radius: var(--toggle-height);
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .disabled-text {
+            color: lightgray;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .device-submenu {
+/*            width: 40%;*/
+            width: 20em;
+
+        }
+    </style>
+    <script>
+        function toggleItem(event, item) {
+            if (event.target.checked) {
+                item.classList.remove("disabled-text");
+            } else {
+                item.classList.add("disabled-text");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Device List</h1>
+    <div>
+        <h2>Moodi Glasses</h2>
+        <div class="device-submenu">
+        <p id="item1" class="disabled-text">
+            <label class="toggle-switch">
+                <input type="checkbox" onchange="toggleItem(event, item1)">
+                <span class="slider round"></span>
+            </label>
+            Moodi Glass Model A
+        </p>
+        <p id="item2" class="disabled-text">Moodi Glass Model B
+            <label class="toggle-switch">
+                <input type="checkbox" onchange="toggleItem(event, item2)">
+                <span class="slider round"></span>
+            </label>
+        </p>
+    </div>
+    </div>
+
+    <div>
+        <h2>Smart Watches</h2>
+        <p id="item3" class="disabled-text">Smart Watch Model X
+            <label class="toggle-switch">
+                <input type="checkbox" onchange="toggleItem(event, item3)">
+                <span class="slider round"></span>
+            </label>
+        </p>
+        <p id="item4" class="disabled-text">Smart Watch Model Y
+            <label class="toggle-switch">
+                <input type="checkbox" onchange="toggleItem(event, item4)">
+               
+                <span class="slider round"></span>
+            </label>
+        </p>
+    </div>
+
+    <div>
+        <h2>Other Devices</h2>
+        <p id="item5" class="disabled-text">Other Device Model A
+            <label class="toggle-switch">
+                <input type="checkbox" onchange="toggleItem(event, item5)">
+                <span class="slider round"></span>
+            </label>
+        </p>
+        <p id="item6" class="disabled-text">Other Device Model B
+            <label class="toggle-switch">
+                <input type="checkbox" onchange="toggleItem(event, item6)">
+                <span class="slider round"></span>
+            </label>
+        </p>
+    </div>
+
+</body>
+
+</html>

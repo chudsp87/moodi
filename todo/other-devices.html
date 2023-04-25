@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="styles/buttons.css" rel="stylesheet" />
+    <title>Devices</title>
+    <style>
+        body {
+            font-family: 'Varela Round', sans-serif;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        :root {
+            --toggle-height: 1.2em;
+            --toggle-width: 3em;
+        }
+
+        .toggle-switch {
+            position: absolute;
+            left: 9em;
+            display: inline-block;
+            width: var(--toggle-width);
+            height: var(--toggle-height);
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: calc(var(--toggle-height)*.8);
+            width: calc(var(--toggle-height)*.8);
+            left: calc(var(--toggle-height)*.1);
+            bottom: calc(var(--toggle-height)*.1);
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: rgb(102, 103, 171);
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+            -ms-transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+            transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+        }
+
+        .slider.round {
+            border-radius: var(--toggle-height);
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .disabled-text {
+            color: dimgray;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .text-item {
+            margin-right: 1.5em;
+        }
+
+    </style>
+    <script>
+        function toggleItem(event, item) {
+            if (event.target.checked) {
+                item.classList.remove("disabled-text");
+            } else {
+                item.classList.add("disabled-text");
+            }
+        }
+    </script>
+  </head>
+  
+  <body>
+    
+    <img class="logo" src="images/logo/logo-final/green.png" alt="My test image" />
+    <br>
+    <br>
+    <p>Do you have any other devices to pair? You can search the listed categories below to see the lists of compatible devices. </p><p style="color: red;">(if able to implement search bar - mention that option. If not - just delete this.) </p>
+    
+    <ul class="device-list" style="line-height:500%">
+      <li>Smartwatches (add image or icon)</li>
+      <li>Heartrate monitors</li>
+      <li>Others???</li>
+    </ul>
+
+    <h4>Press the button on the right temple of your glass (shown below) </h4><h4 style="color: red;">[[add pic of glasses]] then click PAIR.</h4>
+
+    <h4 style="color: red">*add "successfully paired" popup</h4>
+
+    <img src="nonexistent" alt="placeholder: add demonstration pic of glasses" />
+
+    <button class="big-button">PAIR</button>
+
+
+    <a href="home.html" class="back">&laquo; finish<br>later</a>
+    <a href="orientation.html" class="next">continue &raquo;</a>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+    body {
+        font-family: "Varela Round", sans-serif;
+        margin: 0;
+        width: 100%;
+    }
+
+    
+    .selected-mood {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 125%;
+            color: var(--veryperi);
+        }
+
+        input[type="checkbox"]{
+cursor: pointer;
+-webkit-appearance: none;
+appearance: none;
+background: var(--cloud);
+border-radius: 1px;
+box-sizing: border-box;
+position: relative;
+box-sizing: content-box ;
+width: 30px;
+height: 30px;
+border: 0.3em solid var(--anthracite);
+outline: 0.3em solid white;
+transition: all .3s linear;
+}
+input[type="checkbox"]:checked{
+  background-color: var(--veryperi);
+}
+input[type="checkbox"]:focus{
+  outline: 0 none;
+  box-shadow: none;
+}
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="row">
+        <div id="sidenav"></div>
+        <div class="main" style="padding: 1em 7em 1em 2em;">
+            <div class="flex-1">
+                <!-- <div class="basic-text-page" style="padding: 1em 7em 1em 2em;"> -->
+                <h1 style=>Your Home Page</h1>
+                <p style="font-weight: 400; margin-top: -.05em"><em>Utilize this page if you need to set or update your current mood/emotion or toggle "Do Not Disturb"</em></p>
+                <br>
+                <div class="column">
+                <div class="row" style="font-size: 24px;">
+                    <p style="font-size: 24px;" id="p">Current mood: <span class="selected-mood">confused</span></p>
+                    <select style="margin-left: 3em; height: 2em; color: var(--oak); align-self: center; font-size: 24px;" id="mood-selector">
+                        <option select="selected" value="">--update current mood--</option>
+                        <option value="surprise">SURPRISE</option>
+                        <option value="amazed">&nbsp;&nbsp; AMAZED</option>
+                        <option value="confused">&nbsp;&nbsp; CONFUSED</option>
+                        <option value="excited">&nbsp;&nbsp; EXCITED</option>
+                        <option value="anxious">&nbsp;&nbsp; &nbsp;&nbsp; ANXIOUS</option>
+                        <option value="nervous">&nbsp;&nbsp; &nbsp;&nbsp; NERVOUS</option>
+                        <option value="startled">&nbsp;&nbsp; STARTLED</option>
+                        <option value="happy">HAPPY</option>
+                        <option value="joyful">&nbsp;&nbsp; JOYFUL</option>
+                        <option value="optimistic">&nbsp;&nbsp; OPTIMISTIC</option>
+                        <option value="peaceful">&nbsp;&nbsp; PEACEFUL</option>
+                        <option value="proud">&nbsp;&nbsp; PROUD</option>
+                        <option value="sad">SAD</option>
+                        <option value="bored">&nbsp;&nbsp; BORED</option>
+                        <option value="despair">&nbsp;&nbsp; DESPAIR</option>
+                        <option value="guilty">&nbsp;&nbsp; GUILTY</option>
+                        <option value="lonely">&nbsp;&nbsp; LONELY</option>
+                    </select>
+                </div>
+                <div class="row" style="align-items: center;">
+                    <!-- <p style="font-size: 24px;" >Do Not Disturb: </p> -->
+                    <!-- <input type="checkbox" > -->
+                    <!-- <label id="ouput" for="checkbox">Do Not Disturb: &nbsp</label> -->
+                    
+                    <p style="font-size: 24px;" id="output">Do Not Disturb: <span class="selected-mood">ON</span> &nbsp&nbsp</p>
+                    <input type="checkbox" id="checkbox">
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+        const moodSelector = document.getElementById('mood-selector');
+        moodSelector.addEventListener('change', (event) => {
+            const selectedMood = event.target.value;
+            const currentMood = document.getElementById('p');
+            currentMood.innerHTML = `Current mood: <span class="selected-mood">${selectedMood.toUpperCase()}</span>`;
+        });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("#header").load("components/header.html");
+        $("#sidenav").load("components/sidenav.html");
+        $("#footer").load("components/footer.html");
+        // $("#bottom-buttons").load("components/bottom-buttons.html");
+    });
+    </script>
+    <script>
+        // Get the checkbox element and output element
+        const checkbox = document.getElementById('checkbox');
+        const output = document.getElementById('output');
+
+        // Add an event listener to the checkbox element
+        checkbox.addEventListener('change', function() {
+            // Check if the checkbox is checked
+            if (checkbox.checked) {
+                // Append text to the output element
+                output.innerHTML = `Do Not Disturb: <span class="selected-mood">ON</span>  &nbsp&nbsp&nbsp`;
+            } else {
+                // Remove text from the output element
+                output.innerHTML = `Do Not Disturb: <span class="selected-mood">OFF</span> &nbsp`;
+            }
+        });
+    </script>
+</body>
+
+</html>

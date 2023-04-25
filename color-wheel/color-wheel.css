@@ -1,0 +1,76 @@
+#circle
+{
+    height:50vmin;
+    width:50vmin;
+}
+
+#radialmenu {
+    font-family: 'stint ultra condensed', tahoma, sans-serif;
+    fill: #fff !important;
+}
+a {
+color:#ff7600;
+}
+
+.mouseover {
+    opacity: 0.5;
+}
+
+code {
+    background-color: #eee;
+    color:#000;
+}
+
+.content > ul > i {
+    font-size:0.8em;
+}
+
+h1 {
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+.content {
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 200;
+    background: #222;
+    font-size:0.95em;
+    padding: 20px;
+    border: 1px dashed white;
+}
+
+.menuitem {
+    fill: #555;
+}
+
+#path_CURSOR {
+    fill:#777;
+}
+
+.curved, .radial {
+    fill: #fff;
+}
+svg text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+svg text::selection {
+    background: none;
+}
+.svgapp {
+    width:100%;
+    height:100%;
+    position:relative;
+    margin-left: 0%;
+    margin-top: 0%;
+    overflow : hidden;
+}
+.svgapp > g {
+    transform: translate(calc(50%), calc(50%));
+}
+.hide-me
+{
+    filter: brightness(0.7)
+}

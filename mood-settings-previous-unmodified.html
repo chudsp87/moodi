@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="styles/buttons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="./color-wheel/color-wheel.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.auto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./color-wheel/d3-sunburst-menu-master/d3-sunburst-menu-master/src/d3-sunburst-menu.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        body {
+        font-family: "Varela Round", sans-serif;
+        margin: 0;
+        width: 100%;
+    }
+
+    </style>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <!-- <h1>My Website</h1> -->
+        <a style="margin-top: 1rem" href="index.html">
+            <img id="logo" src="images/logo/moodi-logo-final.svg" />
+        </a>
+        <p><em>Moodi tagline</em></p>
+    </div>
+    <!-- Navigation Bar -->
+    <!-- <div class="navbar">
+        <a class="active" href="moodi-flex-style.html">Home</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div> -->
+    <!-- The flexible grid (content) -->
+    <div class="row">
+        <div class="side">
+            <div class="sidenav">
+                <a href="index.html">Home</a>
+                <a href="#devices">Devices</a>
+                <!-- <button class="dropdown-btn">Mood Settings
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">Happiness</a>
+                    <a href="#">Surprise</a>
+                    <a href="#">Sadness</a>
+                    <a href="#">Anger</a>
+                    <a href="#">Fear</a>
+                    <a href="#">Disgust</a>
+                </div> -->
+                <a href="mood-settings.html">Mood Settings</a>
+                <a href="#sharing">Sharing/Privacy</a>
+                <a href="#history">History/Mapping</a>
+                <a href="ar-view.html">AR View (needed?)</a>
+                <button class="dropdown-btn">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="main" style="padding: 1em 7em 1em 2em;">
+            <div class="flex-1">
+                
+                <!-- <div class="basic-text-page" style="padding: 1em 7em 1em 2em;"> -->
+                <div id="mood-options" style="overflow-y: auto;">
+                    <h1>Mood Settings</h1>
+                    <h3><a onclick="startContext('mine')">Modify my own mood settings (how I display to others)</a></h3>
+                    <h3><a onclick="startContext('others')">Modify others' settings (how I view others' emotions)</a></h3>
+                    <h3><a onclick="startContext('color')">Modify emotion-color map</a></h3>
+                </div>
+                    
+                    <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+    <script>
+    function toggleOverlay(overlayId) {
+        const overlays = document.getElementsByClassName('overlay');
+        for (let i = 0; i < overlays.length; i++) {
+            overlays[i].classList.remove('visible');
+        }
+
+        const overlay = document.getElementById(overlayId);
+        overlay.classList.add('visible');
+    }
+    </script>
+    <script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+    </script>
+    <script>
+    /* Add click event listener to dropdown container elements */
+    // document.querySelectorAll("div.dropdown-container > a").forEach(function(element) {
+    document.querySelectorAll("div.sidenav > a, div.dropdown-container > a").forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            // Remove the active-dropdown class from all dropdown container elements
+            document.querySelectorAll('div.sidenav > a, .dropdown-container a').forEach(function(el) {
+                el.classList.remove('active-dropdown');
+            });
+
+            // Add the active-dropdown class to the clicked element
+            event.target.classList.add('active-dropdown');
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    $(function() {
+        $("div.sidenav > a, div.dropdown-container > a").click(function() {
+            $.get("#");
+
+            return false; // prevent default browser refresh on "#" link
+        });
+    });
+    </script>
+</body>
+
+</html>
+
+<script type="module">
+    import ColorWheel from "./color-wheel/color-wheel.js";
+
+    
+
+    window.startContext = async function(mode)
+    {
+        let domElem = document.getElementById("mood-options");
+
+        if (window["MOODI"] === undefined)
+        {
+            window.MOODI = {}
+        }
+        window.MOODI.mode = mode;
+
+        let r = await fetch("/color-wheel/color-wheel.json");
+        let json = await r.json();
+        let json2 = JSON.parse(JSON.stringify(json))
+        let json3 = JSON.parse(JSON.stringify(json))
+
+        json["name"] = "mine";
+        json2["name"] = "others";
+        json3["name"] = "colors";
+
+        let interactable = mode === "color" ? false : true;
+        let cw, cw2, cw3;
+        if (mode === "mine")
+        {
+           cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
+           cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
+           cw3 = new ColorWheel({interactable:interactable, colorWheelConfig:json3});
+        } 
+        else
+        {
+           cw2 = new ColorWheel({interactable:interactable, colorWheelConfig:json2});
+           cw = new ColorWheel({interactable:interactable, colorWheelConfig:json});
+           cw3 = new ColorWheel({interactable:interactable, colorWheelConfig:json3});
+        }
+
+        let html = await cw.generateHTML();
+        let html2 = await cw2.generateHTML();
+        let html3 = await cw3.generateHTML();
+
+        let wrap = document.createElement("div");
+        let wrap2 = document.createElement("div");
+        let wrap3 = document.createElement("div");
+        wrap.style.height = "500px";
+        wrap2.style.display = "none";
+
+
+        if (mode === "others" || mode === "mine")
+        {
+            wrap3.style.display = "none";
+            let otherMode = mode === "others" ? "mine" : "others";
+
+            domElem.innerHTML = `
+            <h5><a href="/mood-settings.html">\<\< Back</a></h5>
+            
+            <h1>Modify ${mode} emotions settings</h1>
+            `;
+            domElem.innerHTML += `
+            <h3>Modify Emotion State</h3>
+            <h5>Click on an emotion to enable or disable it and its children.</h5>
+            
+            `;
+        }
+        else
+        {
+            wrap3.style.height = "500px";
+            wrap.style.height = "0px";
+            domElem.innerHTML = `
+                <h5><a href="/mood-settings.html">\<\< Back</a></h5>
+                <h3>Modify Emotion Color</h3>
+                <h5>Type in an existing emotion and select a color value to change it to.</h5>
+                <h5>Note that these colors are subjective to you only.</h5>
+                <div>
+                    <input type='text' id='emotionname' placeholder='Emotion Name'></input>
+                    \tColor:\t
+                    <input type='color' id='emotioncolor'></input>
+                    <a id="updateemotioncolor">Update</a>
+                </div>
+                `;
+
+            updateemotioncolor.onclick = ()=>{
+                MOODI.setEmotionColor("mine", document.getElementById("emotionname").value.toLowerCase(), document.getElementById("emotioncolor").value+"")
+                MOODI.setEmotionColor("others", document.getElementById("emotionname").value.toLowerCase(), document.getElementById("emotioncolor").value+"")
+                MOODI.setEmotionColor("colors", document.getElementById("emotionname").value.toLowerCase(), document.getElementById("emotioncolor").value+"")
+            }
+        }
+
+        domElem.appendChild(wrap);
+        domElem.appendChild(wrap2);
+        domElem.appendChild(wrap3);
+
+        if (mode === "mine")
+        {
+            window.MOODI.primary = cw;
+            wrap2.appendChild(html2);
+            wrap.appendChild(html);
+        }
+        else
+        {
+            window.MOODI.primary = cw2;
+            wrap.appendChild(html2);
+            wrap2.appendChild(html);
+        }
+        wrap3.appendChild(html3)
+    
+    }
+
+    
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: "Varela Round", sans-serif;
+            margin: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="row">
+        <div id="sidenav"></div>
+        <div class="main" style="padding: 1em 7em 1em 2em; flex-direction: column;">
+            <!-- <div class="wrapper"> -->
+            <h1>Template page with dynamic elements (header/sidenav/footer)</h1>
+
+            <h3 style="font-weight: 500"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+            <p>Two nav buttons below</p>
+            <div id="bottom-buttons-center">
+                <a href="#" id="next" style="height: 4em; vertical-align: middle; padding: .4em;"><span style="text-weight: 500; color: var(--cloud);">Update my<br>privacy settings</a>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#header").load("components/header.html");
+            $("#sidenav").load("components/sidenav.html");
+            $("#footer").load("components/footer.html");
+            // $("#bottom-buttons").load("components/bottom-buttons.html");
+        });
+    </script>
+</body>
+
+</html>

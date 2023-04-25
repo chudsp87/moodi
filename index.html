@@ -2,12 +2,13 @@
 <html>
 
 <head>
-    <title>Page Title</title>
+    <title>Let's Get Started</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/style.css" rel="stylesheet" />
     <link href="styles/buttons.css" rel="stylesheet" />
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         body {
         font-family: "Varela Round", sans-serif;
@@ -16,156 +17,32 @@
     }
 
     </style>
+</head>
 
 <body>
-    <!-- Header -->
-    <div class="header">
-        <!-- <h1>My Website</h1> -->
-        <a style="margin-top: 1rem" href="index.html">
-            <img id="logo" src="images/logo/moodi-logo-final.svg" />
-        </a>
-        <p><em>Moodi tagline</em></p>
-    </div>
-    <!-- Navigation Bar -->
-    <!-- <div class="navbar">
-        <a class="active" href="moodi-flex-style.html">Home</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-    </div> -->
-    <!-- The flexible grid (content) -->
+    <div id="header"></div>
     <div class="row">
-        <div class="side">
-            <div class="sidenav">
-                <a href="#home">Home</a>
-                <a href="#devices">Devices</a>
-                <button class="dropdown-btn">Mood Settings
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">Happiness</a>
-                    <a href="#">Surprise</a>
-                    <a href="#">Sadness</a>
-                    <a href="#">Anger</a>
-                    <a href="#">Fear</a>
-                    <a href="#">Disgust</a>
-                </div>
-                <a href="#sharing">Sharing/Privacy</a>
-                <a href="#history">History/Mapping</a>
-                <a href="#sharing">AR View (needed?)</a>
-                <button class="dropdown-btn">Dropdown
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="main" style="padding: 1em 7em 1em 2em;">>
+        <div id="sidenav"></div>
+        <div class="main" style="padding: 1em 7em 1em 2em;">
             <div class="flex-1">
-                
-                <!-- <div class="basic-text-page" style="padding: 1em 7em 1em 2em;"> -->
-                <h1 style=>Page Heading</h1>
-                <h3>Description/subheading for current page</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <p>Additional text or subheading as needed...</p>
-                <h4>some <em>emphasis!</em></h4>
-                <!-- </div> -->
+                <h1>Welcome!</h1>
+                <p>Welcome to Moodi!</p>
+                <p>At Moodi we're dedicated to helping inviduals be better understand others' emotions and be able to express on the <em>outside</em> what they feel on the <em>inside</em>. Moodi glasses enable the wearer to visually see other Moodi-users' emotion/mood/availability thru a colored "aura" or "glow" that envelops the individual and corresponds to that user's current mood.</p>
+                <p>In order to best serve you, there is some preliminary information we need to gather from you to get everything rolling. There's also several features we'd like to quickly share with you so can easily navigate the app to make any changes that you may wish to in the future. </p>
+                <p>So if you're ready, let's get started!</p>
+                <div style="display: flex; text-align: center; margin: 2em;"><button class="electric" onclick="window.location='getting-started-2'" style="margin: auto" role="button"><span>Let's Get Started!</span></button></div>
             </div>
-            <div class="flex-2">
-                <div class="wrapper">
-                    <!-- <img src="images/glow-preview/color-glow-base.png" alt="Base Image" class="base-image"> -->
-                    <img src="images/glow-preview/color-glow-base.png" alt="Base Image" class="base-image">
-                    <img src="images/glow-preview/red-glow.png" alt="Overlay 1" class="overlay" id="red-overlay">
-                    <img src="images/glow-preview/orange-glow.png" alt="Overlay 2" class="overlay" id="orange-overlay">
-                    <img src="images/glow-preview/yellow-glow.png" alt="Overlay 3" class="overlay" id="yellow-overlay">
-                    <img src="images/glow-preview/lime-green-glow.png" alt="Overlay 1" class="overlay" id="lime-green-overlay">
-                    <img src="images/glow-preview/green-glow.png" alt="Overlay 1" class="overlay" id="green-overlay">
-                    <img src="images/glow-preview/cyan-glow.png" alt="Overlay 2" class="overlay" id="cyan-overlay">
-                    <img src="images/glow-preview/blue-glow.png" alt="Overlay 3" class="overlay" id="blue-overlay">
-                    <img src="images/glow-preview/purple-glow.png" alt="Overlay 1" class="overlay" id="purple-overlay">
-                    <img src="images/glow-preview/pink-glow.png" alt="Overlay 2" class="overlay" id="pink-overlay">
-                </div>
-            </div>
-            <div class="flex-3">
-                <button id="red-button" onclick="toggleOverlay('red-overlay')">Red</button>
-                <button id="orange-button" onclick="toggleOverlay('orange-overlay')">Orange</button>
-                <button id="yellow-button" onclick="toggleOverlay('yellow-overlay')">Yellow</button>
-                <button id="lime-green-button" onclick="toggleOverlay('lime-green-overlay')">Lime<br>Green</button>
-                <button id="green-button" onclick="toggleOverlay('green-overlay')">Green</button>
-                <button id="cyan-button" onclick="toggleOverlay('cyan-overlay')">Cyan</button>
-                <button id="blue-button" onclick="toggleOverlay('blue-overlay')">Blue</button>
-                <button id="purple-button" onclick="toggleOverlay('purple-overlay')">Purple</button>
-                <button id="pink-button" onclick="toggleOverlay('pink-overlay')">Pink</button>
-            </div>
-            <!-- <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-            <br>
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
         </div>
     </div>
-    <!-- Footer -->
-    <div class="footer">
-        <h2>Footer</h2>
-    </div>
+    <div id="footer"></div>
+
     <script>
-    function toggleOverlay(overlayId) {
-        const overlays = document.getElementsByClassName('overlay');
-        for (let i = 0; i < overlays.length; i++) {
-            overlays[i].classList.remove('visible');
-        }
-
-        const overlay = document.getElementById(overlayId);
-        overlay.classList.add('visible');
-    }
-    </script>
-    <script>
-    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
-
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
+        $(document).ready(function() {
+            $("#header").load("components/header.html");
+            $("#sidenav").load("components/sidenav.html");
+            $("#footer").load("components/footer.html");
+            // $("#bottom-buttons").load("components/bottom-buttons.html");
         });
-    }
-    </script>
-    <script>
-    /* Add click event listener to dropdown container elements */
-    // document.querySelectorAll("div.dropdown-container > a").forEach(function(element) {
-    document.querySelectorAll("div.sidenav > a, div.dropdown-container > a").forEach(function(element) {
-        element.addEventListener('click', function(event) {
-            // Remove the active-dropdown class from all dropdown container elements
-            document.querySelectorAll('div.sidenav > a, .dropdown-container a').forEach(function(el) {
-                el.classList.remove('active-dropdown');
-            });
-
-            // Add the active-dropdown class to the clicked element
-            event.target.classList.add('active-dropdown');
-        });
-    });
-    </script>
-    <script type="text/javascript">
-    $(function() {
-        $("div.sidenav > a, div.dropdown-container > a").click(function() {
-            $.get("#");
-
-            return false; // prevent default browser refresh on "#" link
-        });
-    });
     </script>
 </body>
 
