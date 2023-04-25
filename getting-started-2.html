@@ -1,48 +1,65 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Page Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/style.css" rel="stylesheet" />
-    <link href="styles/buttons.css" rel="stylesheet" />
-    <title>Getting Started - Name</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: "Varela Round", sans-serif;
+            margin: 0;
+            width: 100%;
+        }
+    </style>
     
 </head>
 
 <body>
-  <div class="header">
-            <div class="topbar">
-                <div class="logo">
-                    <img src="images/logo/moodi-logo-final.svg" />
-                </div>
-            </div>
-            <ul class="topnav" style="padding: 0">
-                <li style="width: 2rem">&nbsp</li>
-                <li><a class="active" href="navigation-page.html">Home</a></li>
-                <li><a href="display-settings.html">Display Settings</a></li>
-                <li><a href="connect.html">Connect New Device</a></li>
-                <li><a href="sharing.html">Sharing</a></li>
-                <li class="right"><a href="index.html">Index</a></li>
-            </ul>
-        </div>
-    <h2> First things first: Let's get some basic information about you</h2>
-    <label for="fname">First Name:</label>
-    <input type="text" id="fname" value="First name...">
-    <label for="lname">Last Name:</label>
-    <input type="text" id="lname" value="Last name...">
-    <!-- <form action="/action_page.php"> -->
+    <div id="header"></div>
+    <div class="row">
+        <div id="sidenav"></div>
+<div class="main" style="padding: 1em 7em 1em 2em;">
+            <div class="flex-1">
+        <h2> First things first: Let's get some basic information about you</h2>
+    <div>
+    <label for="fname">First Name: </label>
+    <input type="text" id="fname" onfocus="this.value=''" value="First name...">
+    </div>
+    <br>
+    <div>
+    <label for="lname">Last Name: </label>
+    <input type="text" id="lname" onfocus="this.value=''" value="Last name...">
+    </div>
+    <br>
+    <div>
     <label for="birthday">Birthday:</label>
     <input type="date" id="birthday" name="birthday">
-    <input type="submit">
-    <!-- </form> -->
-    <div class="container">
-        <ul class="button-group">
-            <li class="buttom-button"><a id="back-button" href="getting-started.html">&laquo; go back</a></li>
-            <li class="buttom-button"><a id="next-button" href="getting-started-3.html">next &raquo;</a></li>
-        </ul>
     </div>
+    <!-- <div>
+    <input type="submit" value="Submit">
+    </div> -->
+    <!-- </form> -->
+    <div class="bottom-buttons row" style="justify-content: center;">
+        <a id="back" style="width: 15%; height: 2.5em;" href="index.html">&laquo; go back</a>
+        <a id="next" style="width: 15%; height: 2.5em;" href="getting-started-3.html">next &raquo;</a>
+    </div>
+</div>
+</div>
+</div>
+    <div id="footer"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#header").load("components/header.html");
+            $("#sidenav").load("components/sidenav.html");
+            $("#footer").load("components/footer.html");
+            // $("#bottom-buttons").load("components/bottom-buttons.html");
+        });
+    </script>
 </body>
 
 </html>
