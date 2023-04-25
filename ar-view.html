@@ -168,7 +168,7 @@
         window.MOODI = {}
     }
 
-    let r = await fetch("/color-wheel/color-wheel.json");
+    let r = await fetch("./color-wheel/color-wheel.json");
     let json = await r.json();
 
     json["name"] = "others";
