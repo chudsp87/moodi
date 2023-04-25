@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="styles/login.css" rel="stylesheet" />
+    <link href="styles/buttons.css" rel="stylesheet" />
+    <!-- <link href="styles/create-account.css" rel="stylesheet" /> -->
+    <title>Create Account</title>
+    <style>
+    body {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    width: 700px;
+    height: 560px;
+    }
+    </style>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
+  </head>
+  <script>
+    $(function(){($("#header").load("./notes-n-shit/nav.html"))});
+  </script>
+  <div id="header"></div>
+  <body>
+    <div id="login-box">
+      <div class="left">
+        <h1 style="padding-left: 15px; padding-bottom: 0; font-size: 38px; font-weight: 700;">Sign up</h1>
+        <div class=row>
+          <div class=column>
+            <input type="text" name="username" placeholder="Username" />
+            <input type="text" name="email" placeholder="E-mail" />
+          </div>
+          <div class=column>
+            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password2" placeholder="Retype password" />
+          </div>
+        </div>
+        <input class="center" type="submit" onclick="window.location.href='features.html';" value="Sign me up!" />
+      </div>
+    </div>
+    
+    <div id="login-sso">
+      <div class="bottom-center">
+        <span class="loginwith">Or, log in using SSO</span>
+        
+        <!--<div style="padding: 0px" class="row-bottom"> -->
+        <div style="padding-top: 10px" class="row-bottom">
+          <button class="social-signin facebook" id="facebook-btn" onmouseover="this.src='images/logo-facebook-blue.svg'><img src='images/logo-facebook-white.svg' onmouseover="this.src='images/logo-facebook-blue.svg';" onmouseout="this.src='images/logo-facebook-white.svg';" class="button-logo" id="facebook-button-logo" />Log in with facebook</button>
+          <button class="social-signin twitter">Log in with Twitter</button>
+          <button class="social-signin google">Log in with Google+</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

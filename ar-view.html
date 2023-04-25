@@ -187,9 +187,9 @@
         var colorInHSL = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
         // $rootScope.$emit('colorChanged', {colorInHSL});
 
-        document.getElementById("img-overlay").style.filter = ` hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
+        // document.getElementById("img-overlay").style.filter = ` hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
 
-        // document.getElementById("img-overlay").style.filter = ` sepia(0.1) brightness(5) hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
+        document.getElementById("img-overlay").style.filter = ` sepia(0.1) brightness(5) hue-rotate(${h}deg) saturate(${s}%) brightness(${l}%)`;
     }
 
 

@@ -6,14 +6,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet" />
     <link href="styles/buttons.css" rel="stylesheet" />
-    <title>Other Devices</title>
+    <title>Devices</title>
     <style>
-    body {
-     font-family: 'Varela Round', sans-serif;
-     font-size: 18px;
-      }
+        body {
+            font-family: 'Varela Round', sans-serif;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        :root {
+            --toggle-height: 1.2em;
+            --toggle-width: 3em;
+        }
+
+        .toggle-switch {
+            position: absolute;
+            left: 9em;
+            display: inline-block;
+            width: var(--toggle-width);
+            height: var(--toggle-height);
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: calc(var(--toggle-height)*.8);
+            width: calc(var(--toggle-height)*.8);
+            left: calc(var(--toggle-height)*.1);
+            bottom: calc(var(--toggle-height)*.1);
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: rgb(102, 103, 171);
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+            -ms-transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+            transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+        }
+
+        .slider.round {
+            border-radius: var(--toggle-height);
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .disabled-text {
+            color: dimgray;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .text-item {
+            margin-right: 1.5em;
+        }
+
     </style>
-  
+    <script>
+        function toggleItem(event, item) {
+            if (event.target.checked) {
+                item.classList.remove("disabled-text");
+            } else {
+                item.classList.add("disabled-text");
+            }
+        }
+    </script>
   </head>
   
   <body>

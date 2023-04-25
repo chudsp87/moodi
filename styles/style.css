@@ -77,6 +77,26 @@ h1 {
 
 /*    margin: auto;*/
 }
+
+.updateemotion {
+    height: 3em;
+    width: 20%;
+    border-radius: .4em;
+    display: inline-block;
+    margin: 1em;
+/*    padding: 3em;*/
+    font-size: 22px;
+    padding: 1em;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--veryperi);
+    color: var(--sand);
+    border: .1em solid var(--sand); 
+    margin: auto;
+}
+
+
 #back, #next {
     height: 3em;
     width: 28%;
@@ -331,7 +351,10 @@ button#pink-button {
 
 /* Footer */
 .footer {
-    padding: 20px;
+/*    padding: 20px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     background-color: var(--anthracite);
     border-top: .2em solid var(--veryperi);
@@ -371,7 +394,7 @@ button#pink-button {
     color: var(--cloud);
     display: block;
     border: none;
-    border-bottom: .05em solid var(--volcanic);
+    border-bottom: .1em solid var(--volcanic);
     background: none;
     width: 100%;
     text-align: left;
@@ -385,6 +408,7 @@ button#pink-button {
 .sidenav a:hover,
 .dropdown-btn:hover {
     background-color: var(--volcanic);
+    border-bottom: .1em solid var(--sand);
 }
 
 /* Main content */

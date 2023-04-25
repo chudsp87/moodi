@@ -15,6 +15,28 @@
             width: 100%;
         }
     </style>
+    <style>
+label {
+    
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+.top-option {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.sub-option {
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+select {
+    padding: 2px 5px;
+}
+</style>
 </head>
 
 <body>
@@ -26,6 +48,30 @@
             <h1>Template page with dynamic elements (header/sidenav/footer)</h1>
 
             <h3 style="font-weight: 500"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+
+            <label for="emo-select">Choose an Emotion:</label>
+
+
+<select name="emotion" id="emo-select">
+    <option value="surprise">SURPRISE</option>
+<option value="amazed">&nbsp;&nbsp; &nbsp;&nbsp; AMAZED</option>
+<option value="confused">&nbsp;&nbsp; &nbsp;&nbsp; CONFUSED</option>
+<option value="excited">&nbsp;&nbsp; &nbsp;&nbsp; EXCITED</option>
+<option value="anxious">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; ANXIOUS</option>
+<option value="nervous">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; NERVOUS</option>
+<option value="startled">&nbsp;&nbsp; &nbsp;&nbsp; STARTLED</option>
+<option value="happy">HAPPY</option>
+<option value="joyful">&nbsp;&nbsp; &nbsp;&nbsp; JOYFUL</option>
+<option value="optimistic">&nbsp;&nbsp; &nbsp;&nbsp; OPTIMISTIC</option>
+<option value="peaceful">&nbsp;&nbsp; &nbsp;&nbsp; PEACEFUL</option>
+<option value="proud">&nbsp;&nbsp; &nbsp;&nbsp; PROUD</option>
+<option value="sad">SAD</option>
+<option value="bored">&nbsp;&nbsp; &nbsp;&nbsp; BORED</option>
+<option value="despair">&nbsp;&nbsp; &nbsp;&nbsp; DESPAIR</option>
+<option value="guilty">&nbsp;&nbsp; &nbsp;&nbsp; GUILTY</option>
+<option value="lonely">&nbsp;&nbsp; &nbsp;&nbsp; LONELY</option>
+</select>
+
             <p>Two nav buttons below</p>
             <div id="bottom-buttons-center">
                 <a href="#" id="next" style="height: 4em; vertical-align: middle; padding: .4em;"><span style="text-weight: 500; color: var(--cloud);">Update my<br>privacy settings</a>
