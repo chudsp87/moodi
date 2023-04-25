@@ -77,6 +77,9 @@ h1 {
 
 /*    margin: auto;*/
 }
+#bottom-buttons > a {
+    align-self: center;
+}
 
 .updateemotion {
     height: 3em;
@@ -99,16 +102,16 @@ h1 {
 
 #back, #next {
     height: 3em;
-    width: 28%;
+    width: 25%;
     border-radius: .4em;
-    display: inline-block;
+/*    display: inline-block;*/
     margin: 1em;
 /*    padding: 3em;*/
     font-size: 22px;
-    padding: 1em;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
+/*    padding: 1em;*/
+/*    text-decoration: none;*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
 /*    margin: auto;*/
 }
 
