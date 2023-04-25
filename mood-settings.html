@@ -66,9 +66,7 @@
         </div>
     </div>
     <!-- Footer -->
-    <div class="footer">
-        <h2>Footer</h2>
-    </div>
+    <div id="footer">
     <script>
     function toggleOverlay(overlayId) {
         const overlays = document.getElementsByClassName('overlay');
@@ -119,6 +117,14 @@
 
             return false; // prevent default browser refresh on "#" link
         });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("#header").load("components/header.html");
+        $("#sidenav").load("components/sidenav.html");
+        $("#footer").load("components/footer.html");
+        // $("#bottom-buttons").load("components/bottom-buttons.html");
     });
     </script>
 </body>
