@@ -204,20 +204,17 @@ hr {
 }
 
 .flex-3>button {
-    font-family: "Varela Round", sans-serif;
-    font-size: 14px;
-    margin: 5px;
-    padding: 0;
+    border-radius: 1em;
 }
 
 .flex-3>button:hover {
-    scale: 1.3;
+    scale: 1.15;
     border-width: .2em;
 }
 
 .flex-3>button .active,
 .flex-3>button:active {
-    scale: 1.3;
+    scale: 1.15;
     border-width: .2em;
 }
 
@@ -330,9 +327,9 @@ button#pink-button {
     height: 4em;
     color: var(--cloud);
     font-size: 24px;
-    font-weight: 600;
-/*    text-shadow: black 0 0 2px;*/
-    -webkit-text-stroke: .03em var(--anthracite);
+    font-weight: 900;
+    text-shadow: var(--volcanic) 0 0 3px;
+/*    -webkit-text-stroke: .02em var(--anthracite);*/
     /*  padding: 3em 0;*/
 }
 
