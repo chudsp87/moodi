@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: "Varela Round", sans-serif;
+            margin: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="row">
+        <div id="sidenav"></div>
+        <div class="main" style="padding: 1em 7em 1em 2em; flex-direction: column;">
+            <!-- <div class="wrapper"> -->
+            <div style="padding-bottom: 1.5em" id="login-box">
+                <div class="left">
+                    <h1 style="padding-left: 15px; padding-bottom: 0; font-size: 38px; font-weight: 700;">Sign up</h1>
+                    <div class=row>
+                        <div class=column>
+                            <input type="text" name="username" placeholder="Username" />
+                            <input type="text" name="email" placeholder="E-mail" />
+                        </div>
+                        <div class=column>
+                            <input type="password" name="password" placeholder="Password" />
+                            <input type="password" name="password2" placeholder="Retype password" />
+                            <input style="margin-top: 1em;" type="submit" onclick="window.location.href='features.html';" value="Sign me up!" />
+                        </div>
+                    </div>
+                    <!-- <div style="padding-bottom: 1.5em"> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div id="login-sso">
+                <div class="bottom-center">
+                    <span class="loginwith">Or, log in using SSO</span>
+                    <!--<div style="padding: 0px" class="row-bottom"> -->
+                    <div style="padding-top: 10px" class="row-bottom">
+                        <button class="social-signin facebook" id="facebook-btn" onmouseover="this.src='images/logo-facebook-blue.svg'"><img style="width: 1.25em; height: 1.25em; margin-right: 1em;" src='images/logo-facebook-white.svg' onmouseover="this.src='images/logo-facebook-blue.svg' " ; onmouseout="this.src='images/logo-facebook-white.svg';" class="button-logo" id="facebook-button-logo" />Log in with facebook</button>
+                        <button class="social-signin twitter">Log in with Twitter</button>
+                        <button class="social-signin google">Log in with Google+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+    $(document).ready(function() {
+        $("#header").load("components/header.html");
+        $("#sidenav").load("components/sidenav.html");
+        $("#footer").load("components/footer.html");
+        // $("#bottom-buttons").load("components/bottom-buttons.html");
+    });
+    </script>
+</body>
+
+</html>
