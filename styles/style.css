@@ -329,9 +329,10 @@ button#pink-button {
     flex-basis: 8%;
     height: 4em;
     color: var(--cloud);
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
 /*    text-shadow: black 0 0 2px;*/
-            -webkit-text-stroke: .03em black;
+    -webkit-text-stroke: .03em var(--anthracite);
     /*  padding: 3em 0;*/
 }
 
