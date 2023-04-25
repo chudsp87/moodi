@@ -138,7 +138,7 @@
         }
         window.MOODI.mode = mode;
 
-        let r = await fetch("/color-wheel/color-wheel.json");
+        let r = await fetch("./color-wheel/color-wheel.json");
         let json = await r.json();
         let json2 = JSON.parse(JSON.stringify(json))
         let json3 = JSON.parse(JSON.stringify(json))
@@ -179,7 +179,7 @@
             let otherMode = mode === "others" ? "mine" : "others";
 
             domElem.innerHTML = `
-            <h5><a href="/mood-settings.html">\<\< Back</a></h5>
+            <h5><a href="./mood-settings.html">\<\< Back</a></h5>
             
             <h1>Modify ${mode} emotions settings</h1>
             `;
@@ -194,7 +194,7 @@
             wrap3.style.height = "500px";
             wrap.style.height = "0px";
             domElem.innerHTML = `
-                <h5><a href="/mood-settings.html">\<\< Back</a></h5>
+                <h5><a href="./mood-settings.html">\<\< Back</a></h5>
                 <h3>Modify Emotion Color</h3>
                 <h5>Type in an existing emotion and select a color value to change it to. <br>Note that these colors are subjective to you only.</h5>
                 <br>
