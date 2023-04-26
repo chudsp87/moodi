@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/style.css" rel="stylesheet" />
+    <!-- <link href="styles/buttons.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
@@ -19,12 +20,152 @@
             background-color: var(--cloud);
             box-shadow: 0 0 3px var(--anthracite);
         }
-    </style>
-    <script type="text/javascript">
-            function showMessage() {
-                alert("SUCCESS!  GLASSES SYNCED!");
+
+        .electric {
+            padding: 0.75em 2.5em;
+            border: none;
+            outline: none;
+            /*  color: rgb(255, 255, 255);*/
+            color: var(--cloud);
+            background: var(--anthracite);
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            font-family: Varela Round;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: .5em;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+/*            margin: 2em;*/
+            /* 
+            display: inline-block;
+            text-align: center;
+            width: 200px;
+            transition: all 0.5s;
+            */
             }
-        </script>
+
+        .electric:before {
+            content: "";
+            background: linear-gradient(
+                45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(3px);
+            -webkit-filter: blur(4px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+              animation: glowing-button-electric 20s linear infinite;
+              transition: opacity 0.6s ease-in-out;
+            border-radius: 0.5em;
+            }
+            
+            
+            @keyframes glowing-button-electric {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+            }
+            
+        .electric:hover {
+            color: var(--veryperi);
+            animation: glowing-button-electric 20s linear infinite;
+            transition: opacity 0.6s ease-in-out;
+            }
+        .electric:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--anthracite);
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+            }
+            
+        .electric:hover:after {
+              
+            font-size: 22px;
+            font-weight: 700; 
+            color: var(--veryperi);
+            }
+            
+        .electric span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.4s;
+              
+            }
+        .electric span:before {
+            content: '\00AB';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: -10px;
+/*            right: -10px;*/
+            transition: 0.4s;
+            }
+        .electric span:after {
+            content: '\00BB';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -10px;
+            transition: 0.4s;
+            }
+
+            
+        .electric:hover span {
+            padding-right: 25px;
+            padding-left: 25px;
+            color: var(--veryperi);
+            }
+        
+        .electric:hover span:before {
+            opacity: 1;
+            left: 0;
+            color: var(--veryperi);
+
+            }    
+        .electric:hover span:after {
+            opacity: 1;
+            right: 0;
+            color: var(--veryperi);
+            }
+
+    </style>
+    
+        <script>
+            function delayedAlert() {
+        setTimeout(function() {
+          alert("SUCCESS!  GLASSES SYNCED!");
+        }, 2500); // 2000 milliseconds = 2 seconds
+      }
+  </script>
+
 </head>
 
 <body>
@@ -34,23 +175,40 @@
         <div class="main" style="padding: 1em 7em 1em 2em; flex-direction: column;">
             
             <div class="row" id="instructions-plus-button" style="align-items: center;">
-                <div class="column" style="width: 60%;">
+                <div class="inline-column" style="display: inline-flex; flex-direction: column; d">
                     <h2 style="color: var(--veryperi);">Now let's pair your glasses...</h2>
                 
                     <!-- <div class="column" id="instructions"> -->
                     <h3 style="font-weight: 500"> First, make sure your glasses are turned on...</h3>
-                    <h3 style="font-weight: 500"> Then just click the "sync" button to the right...<br> <strong>That's it!</strong></h3>
+                    <h3 style="font-weight: 500"> Then just click the <strong>"CONNECT"</strong> button below...<br><br><strong>That's it!</strong></h3>
                     <!-- </div> -->
+                    
+                    <!-- <div id="sync" style="align-items: center; justify-content: center;"> -->
+
+                    <!-- <input id="sync-btn" class="bottom-buttons" type="button" value="sync" style="margin-bottom: 6em;  height: 2.5em; width: 7em; flex: 60%; font-weight: 600; font-size: 26px; background-color: var(--anthracite); color: var(--veryperi); border-radius: .5em; border: .15em solid var(--veryperi); cursor: pointer;" onClick="showMessage()"> -->
+                    <!-- <input id="sync-btn" class="bottom-buttons electric" type="button" value="sync" onClick="showMessage()"> -->
+                    <div style="display: flex; justify-content: center; margin-top: 1em;">
+                    <button id="electric" class="electric" onclick="delayedAlert()" role="button"><span>~~CONNECT~~</span></button>
                     <br>
                     <br>
-                    <div class="bottom-buttons row" style="justify-content: center; margin-left: -6em;"> <!-- style="display: flex; justify-content: center;"> -->
+                </div>
+<!--                     --anthracite: rgb(40, 40, 45);
+    --veryperi: rgb(102, 103, 171);
+    --volcanic: rgb(72, 72, 73);
+    --cloud: rgb(240, 238, 233);
+    --sand: rgb(219, 213, 209);
+    --oak: rgb(141, 121, 97);
+    --taupe: rgb(113, 92, 86); -->
+
+                    <!-- <div class="bottom-buttons row" style="justify-content: center; margin-left: -6em;"> --> 
+                        <!-- style="display: flex; justify-content: center;"> -->
+                    <div class="row" style="display: flex; justify-content: center; gap; 1em; margin-top: 4em;">
                         <a id="back" style="width: 7em; height: 2.5em;" href="getting-started-2.html">&laquo; go back</a>
                         <a id="next" style="width: 7em; height: 2.5em;" href="getting-started-4.html">next &raquo;</a>
                     </div>
+                    </div>
                 </div>
-                <div id="sync" style="align-items: center; justify-content: center;">
-                    <input id="sync-btn" class="bottom-buttons" type="button" value="sync" style="margin-bottom: 6em;  height: 2.5em; width: 7em; flex: 60%; font-weight: 600; font-size: 26px; background-color: var(--anthracite); color: var(--veryperi); border-radius: .5em; border: .15em solid var(--veryperi); cursor: pointer;" onClick="showMessage()">
-                </div>
+                
             </div>
             <!-- </div> -->
         </div>
